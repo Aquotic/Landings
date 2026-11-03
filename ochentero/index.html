@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarifas El Barco Ochentero Canarias 2027 | Aquotic</title>
+<meta name="description" content="Precios por persona del crucero El Barco Ochentero en el Costa Smeralda, del 3 al 10 de diciembre de 2027, con My Drinks Plus y tasas incluidas.">
+<meta property="og:title" content="El Barco Ochentero Canarias 2027: tarifas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap">
+<style>
+/* Layout: una columna estrecha pensada para móvil; marca del folleto (azul marino + rosa), un solo tema claro a propósito */
+:root{
+  --navy:#0f4f7a; --deep:#0b3a5c; --sky:#16a9e0; --pink:#e5267f;
+  --paper:#ffffff; --mist:#eef5fa; --ink:#14283a; --muted:#566b7d; --line:#d9e6ef;
+  --display:"Lilita One","Arial Rounded MT Bold",system-ui,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:560px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+.hero{background:var(--navy);color:#fff}
+.hero .wrap{padding-block:28px 26px;display:grid;gap:10px}
+.brand{font-weight:700;font-size:14px;letter-spacing:.02em;color:#bfe6f7}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(34px,10vw,46px);line-height:.98;margin:4px 0 0;text-wrap:balance}
+h1 span{display:block;color:#ffd2e6}
+.meta{margin:0;font-size:15.5px;color:#d7ecf7}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.tags span{font-size:13px;font-weight:500;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:5px 11px;border-radius:999px}
+
+main .wrap{padding-block:24px 8px;display:grid;gap:30px}
+h2{font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1;margin:0;color:var(--navy)}
+.lede{margin:6px 0 0;color:var(--muted);font-size:15px}
+
+.switch{display:grid;grid-template-columns:1fr 1fr;background:var(--mist);border-radius:14px;padding:4px;margin-top:14px}
+.switch button{font:inherit;font-weight:700;font-size:14.5px;border:0;background:transparent;color:var(--muted);padding:11px 8px;border-radius:11px;cursor:pointer}
+.switch button[aria-pressed="true"]{background:var(--paper);color:var(--navy);box-shadow:0 1px 4px rgba(11,58,92,.15)}
+.switch button:focus-visible,a:focus-visible,.copy:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+
+.tablebox{margin-top:12px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);text-align:right;padding:6px 4px 8px}
+th:first-child{text-align:left}
+td{padding:11px 4px;border-top:1px solid var(--line);text-align:right;white-space:nowrap}
+td:first-child{text-align:left;white-space:normal;font-weight:500}
+td.early{font-weight:700;color:var(--navy);font-size:17px}
+td.general{color:var(--muted)}
+tr.group td{border-top:0;padding:18px 4px 2px;font-size:12.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--pink)}
+tr.kids td{font-weight:500;color:var(--muted)}
+.dates{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted);margin-top:10px}
+.dates b{color:var(--pink)}
+
+.deposit{background:var(--pink);color:#fff;border-radius:16px;padding:16px 18px;display:grid;gap:2px}
+.deposit strong{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.1}
+.deposit span{font-size:14.5px;color:#ffe3ef}
+
+.route{list-style:none;margin:14px 0 0;padding:0;display:grid}
+.route li{display:grid;grid-template-columns:62px 1fr auto;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line)}
+.route .d{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.route .p{font-weight:700}
+.route .p small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.route .h{font-size:13px;color:var(--navy);font-variant-numeric:tabular-nums;white-space:nowrap}
+.route li.sea .p{font-weight:500;color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin:8px 0 0}
+
+.incl{margin:12px 0 0;padding-left:18px;color:var(--ink);font-size:15px}
+.incl li{margin:4px 0}
+
+.contact{background:var(--mist);border-radius:16px;padding:18px;display:grid;gap:12px}
+.contact h2{font-size:22px}
+.web{display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:14px;border-radius:12px}
+.phone{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--paper);border-radius:12px;padding:10px 10px 10px 14px}
+.phone span{font-weight:700;font-size:19px;color:var(--navy);user-select:all;font-variant-numeric:tabular-nums}
+.web.pdf{background:var(--paper);color:var(--navy);border:1.5px solid var(--line)}
+.copy{text-decoration:none;font:inherit;font-size:14px;font-weight:700;border:1.5px solid var(--line);background:var(--paper);color:var(--navy);padding:8px 12px;border-radius:10px;cursor:pointer}
+
+footer{font-size:12px;color:var(--muted)}
+footer .wrap{padding-block:18px 32px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="brand">Aquotic · tu agencia de cruceros</div>
+    <h1>El Barco Ochentero <span>Canarias 2027</span></h1>
+    <p class="meta">Costa Smeralda, del 3 al 10 de diciembre de 2027. Salida desde Las Palmas.</p>
+    <div class="tags"><span>Precio final por persona</span><span>My Drinks Plus incluido</span><span>Tasas incluidas</span></div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section>
+      <h2>Tarifas</h2>
+      <p class="lede">Elige si quieres el crucero con vuelo desde Madrid y traslados, o solo el crucero.</p>
+      <div class="switch" role="group" aria-label="Tipo de tarifa">
+        <button type="button" id="opt-vuelo" aria-pressed="true">Con vuelo desde Madrid</button>
+        <button type="button" id="opt-crucero" aria-pressed="false">Solo crucero</button>
+      </div>
+      <div class="tablebox">
+        <table>
+          <thead><tr><th>Cabina</th><th>Anticipada</th><th>General</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div class="dates"><span><b>Anticipada</b> hasta el 31/03/2027</span><span>General desde el 01/04/2027</span></div>
+    </section>
+
+    <div class="deposit">
+      <strong>Reserva por solo 50 € por persona</strong>
+    </div>
+
+    <section>
+      <h2>Qué incluye</h2>
+      <ul class="incl">
+        <li>Crucero de 7 noches en pensión completa.</li>
+        <li>Paquete de bebidas My Drinks Plus.</li>
+        <li>Tasas portuarias (200 €).</li>
+        <li>Todos los conciertos y fiestas ochenteras.</li>
+        <li>Con vuelo: avión Madrid, Las Palmas, Madrid y traslados aeropuerto, puerto, aeropuerto.</li>
+      </ul>
+      <p class="note">No incluye la cuota de servicio de Costa (84 € por persona, se abona a bordo) ni el seguro de viaje.</p>
+    </section>
+
+    <section>
+      <h2>Itinerario</h2>
+      <ol class="route">
+        <li><span class="d">Vie 3</span><span class="p">Las Palmas de Gran Canaria<small>Embarque</small></span><span class="h">sale 22:00</span></li>
+        <li><span class="d">Sáb 4</span><span class="p">Fuerteventura<small>Puerto del Rosario</small></span><span class="h">08:00 a 18:00</span></li>
+        <li><span class="d">Dom 5</span><span class="p">Santa Cruz de Tenerife<small>Noche en puerto</small></span><span class="h">llega 08:00</span></li>
+        <li><span class="d">Lun 6</span><span class="p">Santa Cruz de Tenerife<small>Día completo</small></span><span class="h">sale 20:00</span></li>
+        <li class="sea"><span class="d">Mar 7</span><span class="p">Navegación</span><span class="h"></span></li>
+        <li><span class="d">Mié 8</span><span class="p">Agadir<small>Marruecos</small></span><span class="h">08:00 a 18:00</span></li>
+        <li><span class="d">Jue 9</span><span class="p">Lanzarote<small>Arrecife</small></span><span class="h">09:00 a 18:00</span></li>
+        <li><span class="d">Vie 10</span><span class="p">Las Palmas de Gran Canaria<small>Desembarque</small></span><span class="h">llega 05:00</span></li>
+      </ol>
+      <p class="note">Horarios orientativos, sujetos a cambios por parte de la naviera. Para la escala en Marruecos se recomienda viajar con pasaporte.</p>
+    </section>
+
+    <section class="contact">
+      <h2>Reserva tu camarote</h2>
+      <a class="web" href="https://www.aquotic.com" target="_blank" rel="noopener">Ir a Aquotic.com</a>
+      <a class="web pdf" href="/ochentero/Tarifas_Canarias_2027_Aquotic.pdf" download>Descargar PDF de tarifas</a>
+      <div class="phone">
+        <span id="tel">91 061 61 00</span>
+        <a class="copy" href="tel:+34910616100">Llamar</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer><div class="wrap">Precios por persona en la cabina indicada. Niños en cualquier cabina, siempre con 2 adultos: consultar. © Aquotic</div></footer>
+
+<script>
+const tarifas = [
+  ["Doble", [
+    ["Interior", 1880, 2220, 1685, 2025],
+    ["Exterior", 2020, 2360, 1825, 2165],
+    ["Balcón",   2095, 2435, 1900, 2240]]],
+  ["Triple", [
+    ["Interior", 1760, 2080, 1565, 1885],
+    ["Exterior", 1865, 2185, 1670, 1990],
+    ["Balcón",   1940, 2340, 1745, 2145]]],
+  ["Cuádruple", [
+    ["Interior", 1690, 1930, 1495, 1735],
+    ["Exterior", 1795, 2145, 1600, 1950],
+    ["Balcón",   1870, 2220, 1675, 2025]]],
+  ["Individual", [
+    ["Interior", 2400, 2885, 2205, 2690],
+    ["Exterior", 2500, 3040, 2305, 2845],
+    ["Balcón",   2605, 3485, 2410, 3290]]]
+];
+const eur = n => n.toLocaleString("es-ES", { useGrouping: "always" }) + " €";
+function pinta(conVuelo) {
+  const i = conVuelo ? 1 : 3;
+  let h = "";
+  for (const [grupo, filas] of tarifas) {
+    h += `<tr class="group"><td colspan="3">${grupo}</td></tr>`;
+    for (const f of filas) h += `<tr><td>${f[0]}</td><td class="early">${eur(f[i])}</td><td class="general">${eur(f[i + 1])}</td></tr>`;
+  }
+  h += `<tr class="kids"><td>Niños, con 2 adultos</td><td colspan="2" style="text-align:right">Consultar</td></tr>`;
+  document.getElementById("rows").innerHTML = h;
+  document.getElementById("opt-vuelo").setAttribute("aria-pressed", conVuelo);
+  document.getElementById("opt-crucero").setAttribute("aria-pressed", !conVuelo);
+}
+document.getElementById("opt-vuelo").onclick = () => pinta(true);
+document.getElementById("opt-crucero").onclick = () => pinta(false);
+pinta(true);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Únete a nuestro crucero gay · MSC Seaview 2027 | Aquotic</title>
+<meta name="description" content="Crucero gay en grupo a bordo del MSC Seaview, del 21 al 28 de marzo de 2027. De Lisboa a Barcelona pasando por Casablanca, Málaga y Palma.">
+<meta property="og:title" content="Únete a nuestro crucero gay">
+<meta property="og:description" content="MSC Seaview, del 21 al 28 de marzo de 2027. De Lisboa a Barcelona.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16141f; --soft:#5f5b6e; --line:#e8e6ee; --bg:#ffffff; --tint:#f6f5f9;
+  --accent:#d1155f; --accent-d:#b30f50; --wa:#25d366;
+  --pride:linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#24408e,#732982);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px}
+
+/* Cabecera mínima */
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0 0}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.3px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:18px;height:4px;border-radius:2px;background:var(--pride)}
+.top a.tel{font-size:14px;color:var(--soft);text-decoration:none}
+
+/* Arriba del todo: una frase + formulario */
+.hero{padding:30px 0 8px}
+h1{font-size:34px;line-height:1.1;font-weight:800;letter-spacing:-.025em}
+.meta{font-size:15.5px;color:var(--soft);margin-top:10px}
+
+.form{margin-top:22px}
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar b{display:block;height:100%;width:25%;background:var(--accent);border-radius:4px;transition:width .4s ease}
+.stephead{display:flex;justify-content:space-between;align-items:center;margin:12px 0 14px;font-size:13px;color:var(--soft);min-height:20px}
+.back{background:none;border:0;font:inherit;font-size:13px;color:var(--soft);cursor:pointer;text-decoration:underline}
+.step{display:none}
+.step.on{display:block;animation:in .3s ease both}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.step h2{font-size:19px;font-weight:700;line-height:1.3;letter-spacing:-.01em}
+.step p.help{font-size:15px;color:var(--soft);margin:4px 0 14px}
+.lbl{position:absolute;left:-9999px}
+input[type=email],input[type=text],input[type=tel],select{width:100%;font:inherit;font-size:17px;padding:15px 16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--ink)}
+.bad input{border-color:#c4122f}
+.msg{color:#c4122f;font-size:13.5px;margin-top:6px}
+.msg:empty{display:none}
+.phone{display:flex;gap:8px}
+.phone select{flex:0 0 96px;padding-right:8px;background:#fff}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--soft);margin-top:12px;line-height:1.45}
+.consent input{width:18px;height:18px;flex:0 0 18px;margin-top:1px;accent-color:var(--accent)}
+.consent.bad{color:#c4122f}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:17px;padding:16px;border-radius:12px;margin-top:14px;text-decoration:none;transition:background .15s,transform .1s}
+.btn:active{transform:scale(.985)}
+.btn.main{background:var(--accent);color:#fff}
+.btn.main:hover{background:var(--accent-d)}
+.btn.ghost{background:none;color:var(--soft);font-weight:500;font-size:15px;padding:10px;margin-top:4px}
+.btn.ig{background:var(--tint);color:var(--ink)}
+.btn[disabled]{opacity:.6}
+.btn svg{width:22px;height:22px}
+.choices{display:grid;gap:10px}
+.choice{display:flex;gap:14px;align-items:center;text-align:left;width:100%;cursor:pointer;font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:15px 16px;transition:border-color .15s,background .15s}
+.choice:hover{border-color:#bdb8cc}
+.choice[aria-pressed=true]{border-color:var(--accent);background:#fff5f9}
+.choice .ic{font-size:24px;width:30px;text-align:center}
+.choice b{display:block;font-size:16px;font-weight:600}
+.choice .d{font-size:14px;color:var(--soft)}
+.trust{font-size:12.5px;color:var(--soft);text-align:center;margin-top:12px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.done .hi{font-size:34px}
+
+/* Debajo: todo lo demás */
+section{padding:44px 0;border-top:1px solid var(--line)}
+section:first-of-type{margin-top:36px}
+.h2{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.sub{color:var(--soft);margin-top:6px;font-size:15.5px}
+.route{list-style:none;margin-top:22px;position:relative}
+.route::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.route li{position:relative;padding:0 0 18px 28px}
+.route li::before{content:"";position:absolute;left:0;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.route li.sea::before{background:#fff;border:2px solid #bdb8cc;width:8px;height:8px;left:0;top:6px}
+.route b{font-weight:700;font-size:16px}
+.route li.sea b{font-weight:500;color:var(--soft)}
+.route span{display:block;font-size:13.5px;color:var(--soft)}
+.note{font-size:12.5px;color:var(--soft);margin-top:6px}
+.steps3{list-style:none;margin-top:18px;display:grid;gap:14px}
+.steps3 li{display:flex;gap:14px}
+.steps3 li em{font-style:normal;flex:0 0 28px;height:28px;border-radius:50%;background:var(--tint);font-weight:700;font-size:14px;display:grid;place-items:center}
+.steps3 b{display:block;font-size:16px}
+.steps3 span{font-size:14.5px;color:var(--soft)}
+details{border-bottom:1px solid var(--line);padding:16px 0}
+details:first-of-type{margin-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:16px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;line-height:1;color:var(--soft)}
+details[open] summary::after{content:"–"}
+details p{color:var(--soft);margin-top:8px;font-size:15px}
+.end{text-align:center;padding:44px 0 50px;border-top:1px solid var(--line)}
+.end a{display:inline-block;margin-top:16px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:15px 26px;border-radius:12px}
+footer{background:var(--tint);padding:22px 0 96px;font-size:13px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.sticky{position:fixed;left:16px;right:16px;bottom:max(14px,env(safe-area-inset-bottom));z-index:20;display:block;text-align:center;background:var(--accent);color:#fff;font-weight:700;padding:15px;border-radius:12px;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:opacity .2s,transform .2s}
+.sticky.hide{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (min-width:900px){
+  .wrap{max-width:560px}
+  h1{font-size:44px}
+  .hero{padding-top:56px}
+  .sticky{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="https://aquotic.com"><i aria-hidden="true"></i>aquotic</a>
+    <a class="tel" href="tel:+34910616100">91 061 61 00</a>
+  </div>
+
+  <header class="hero">
+    <h1>Únete a nuestro crucero gay</h1>
+    <p class="meta">MSC Seaview, del 21 al 28 de marzo de 2027. De Lisboa a Barcelona.</p>
+
+    <div class="form" id="form" aria-live="polite">
+      <div class="bar" aria-hidden="true"><b id="bar"></b></div>
+      <div class="stephead"><span class="count" id="count">Paso 1 de 4</span><button class="back" id="back" type="button" hidden>Atrás</button></div>
+
+      <form class="step on" data-step="1" id="s1" novalidate>
+        <h2>¿A qué email te mandamos la info?</h2>
+        <p class="help">Precios, camarotes y todo lo que pasa a bordo.</p>
+        <div id="f-email">
+          <label class="lbl" for="email">Tu email</label>
+          <input type="email" id="email" autocomplete="email" inputmode="email" placeholder="tu@email.com" maxlength="160" required>
+          <div class="msg" id="m-email"></div>
+        </div>
+        <label class="consent" id="f-ok">
+          <input type="checkbox" id="ok">
+          <span>Acepto la <a href="/privacidad" class="privacy" target="_blank" rel="noopener">política de privacidad</a> y recibir información de este crucero.</span>
+        </label>
+        <div class="hp" aria-hidden="true"><input type="text" id="empresa" tabindex="-1" autocomplete="off"></div>
+        <button class="btn main" type="submit">Quiero unirme</button>
+      </form>
+
+      <form class="step" data-step="2" id="s2" novalidate>
+        <h2>¿Cómo te llamas?</h2>
+        <p class="help">Para saber con quién hablamos.</p>
+        <div id="f-nombre">
+          <label class="lbl" for="nombre">Tu nombre</label>
+          <input type="text" id="nombre" autocomplete="given-name" placeholder="Tu nombre" maxlength="80" required>
+          <div class="msg" id="m-nombre"></div>
+        </div>
+        <button class="btn main" type="submit">Continuar</button>
+      </form>
+
+      <div class="step" data-step="3" id="s3">
+        <h2>¿Cómo te gustaría viajar, <span class="first-name"></span>?</h2>
+        <p class="help">Así te enseñamos los precios que te encajan.</p>
+        <div class="choices" role="group" aria-label="Con quién viajas">
+          <button type="button" class="choice" data-v="solo"><span class="ic">🛏️</span><span><b>Solo, camarote para mí</b><span class="d">Mi espacio, a mi ritmo</span></span></button>
+          <button type="button" class="choice" data-v="amigo"><span class="ic">👬</span><span><b>Con un amigo o mi pareja</b><span class="d">Ya tengo con quién compartir</span></span></button>
+          <button type="button" class="choice" data-v="buscar"><span class="ic">🤝</span><span><b>Buscadme compañero</b><span class="d">Compartimos camarote y gastos</span></span></button>
+        </div>
+      </div>
+
+      <form class="step" data-step="4" id="s4" novalidate>
+        <h2>¿Te lo mandamos también por WhatsApp?</h2>
+        <p class="help">Es lo más rápido para dudas y para reservar. Opcional.</p>
+        <div id="f-wa">
+          <label class="lbl" for="wa">Tu WhatsApp</label>
+          <div class="phone">
+            <select id="cc" aria-label="Prefijo">
+              <option value="34" selected>🇪🇸 +34</option>
+              <option value="351">🇵🇹 +351</option>
+              <option value="33">🇫🇷 +33</option>
+              <option value="39">🇮🇹 +39</option>
+              <option value="49">🇩🇪 +49</option>
+              <option value="44">🇬🇧 +44</option>
+              <option value="52">🇲🇽 +52</option>
+              <option value="54">🇦🇷 +54</option>
+              <option value="57">🇨🇴 +57</option>
+              <option value="1">🇺🇸 +1</option>
+            </select>
+            <input type="tel" id="wa" autocomplete="tel-national" inputmode="tel" placeholder="600 000 000">
+          </div>
+          <div class="msg" id="m-wa"></div>
+        </div>
+        <button class="btn main" type="submit">Recibirlo también por WhatsApp</button>
+        <button class="btn ghost" type="button" id="skip">Prefiero solo por email</button>
+      </form>
+
+      <div class="step done" data-step="5" id="s5">
+        <div class="hi">🛳️</div>
+        <h2 style="margin-top:8px">¡Ya estás dentro, <span class="first-name"></span>!</h2>
+        <p class="help" id="done-text"></p>
+        <a class="btn ig" href="https://www.instagram.com/pablodecrucero/" target="_blank" rel="noopener">Mientras, sígueme en Instagram</a>
+      </div>
+
+      <p class="trust" id="trust">Tus datos solo los ve el equipo de Aquotic.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2 class="h2">La ruta</h2>
+    <p class="sub">8 días y 7 noches. Embarque en Lisboa y desembarque en Barcelona.</p>
+    <ol class="route">
+      <li><b>Lisboa</b><span>Domingo 21 de marzo · salida 21:00</span></li>
+      <li class="sea"><b>Navegación</b><span>Lunes 22</span></li>
+      <li><b>Casablanca, Marruecos</b><span>Martes 23 · 06:00 a 20:00</span></li>
+      <li class="sea"><b>Navegación</b><span>Miércoles 24</span></li>
+      <li><b>Málaga</b><span>Jueves 25 · 07:00 a 19:00</span></li>
+      <li class="sea"><b>Navegación</b><span>Viernes 26</span></li>
+      <li><b>Palma de Mallorca</b><span>Sábado 27 · 07:00 a 19:00</span></li>
+      <li><b>Barcelona</b><span>Domingo 28 · llegada 07:00</span></li>
+    </ol>
+    <p class="note">Horarios orientativos, sujetos a cambios por parte de la naviera.</p>
+  </section>
+
+  <section>
+    <h2 class="h2">¿Vienes solo? Te buscamos compañero de camarote</h2>
+    <p class="sub">Compartir camarote abarata el viaje y llegas al barco conociendo ya a alguien.</p>
+    <ol class="steps3">
+      <li><em>1</em><span><b>Nos cuentas cómo eres</b><span>Edad aproximada, si eres más de fiesta o de tumbona y desde dónde viajas.</span></span></li>
+      <li><em>2</em><span><b>Te proponemos compañero</b><span>Alguien con un plan parecido. Si no os encaja, buscamos otro.</span></span></li>
+      <li><em>3</em><span><b>Reserváis juntos</b><span>Cada uno paga su parte del camarote doble.</span></span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2 class="h2">Preguntas rápidas</h2>
+    <details><summary>¿Tengo que pagar algo por apuntarme?</summary><p>No. Apuntarte solo sirve para que te enviemos precios y disponibilidad. Después decides si reservas.</p></details>
+    <details><summary>¿Qué documentación necesito?</summary><p>DNI o pasaporte en vigor. Para la escala en Casablanca te recomendamos pasaporte.</p></details>
+    <details><summary>¿Cómo llego a Lisboa y vuelvo de Barcelona?</summary><p>Te ayudamos con los vuelos o el tren. Cuéntanoslo por WhatsApp y lo vemos.</p></details>
+    <details><summary>¿Quién está detrás?</summary><p>Aquotic, agencia de cruceros con 17 años de experiencia. Te atiende una persona real de principio a fin.</p></details>
+  </section>
+
+  <div class="end">
+    <h2 class="h2">Los mejores camarotes se van primero</h2>
+    <a href="#form">Quiero unirme</a>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <span>© Aquotic · <a href="https://aquotic.com">aquotic.com</a></span>
+  <span><a href="tel:+34910616100">91 061 61 00</a> · <a href="/privacidad" class="privacy">Privacidad</a></span>
+</div></footer>
+
+<a class="sticky hide" id="sticky" href="#form">Quiero unirme</a>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN — duplica el archivo y cambia esto para otro crucero
+   ========================================================= */
+const CONFIG = {
+  campania:      "seaview-gay-2027",
+  crucero:       "el crucero gay del MSC Seaview (21-28 marzo 2027)",
+  supabaseUrl:   "https://eyuqdogsdwxnijswlads.supabase.co",
+  supabaseKey:   "sb_publishable_sFyMqE-qsR5Pkg2RJidBVA_C9vFtxWX" // pública: solo permite añadir contactos
+};
+
+
+/* ---- Origen: ManyChat / UTM ---- */
+const qs = new URLSearchParams(location.search);
+const pick = (k, max) => (qs.get(k) || "").slice(0, max) || null;
+const origen = {
+  utm_source: pick("utm_source", 80), utm_medium: pick("utm_medium", 80),
+  utm_campaign: pick("utm_campaign", 120), utm_content: pick("utm_content", 120),
+  mc_token: pick("mcp_token", 600)
+};
+
+/* ---- Llamadas a Supabase ---- */
+const H = { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey, "Content-Type": "application/json" };
+async function crearLead(email) {
+  const id = crypto.randomUUID(), token = crypto.randomUUID();
+  const body = Object.assign({ id, edit_token: token, email, campania: CONFIG.campania, consentimiento: true }, origen);
+  const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/leads", { method: "POST", headers: Object.assign({ Prefer: "return=minimal" }, H), body: JSON.stringify(body) });
+  if (!r.ok) throw new Error("insert " + r.status);
+  return { id, token };
+}
+async function completar(campos) {
+  if (!state.id) return;
+  try {
+    await fetch(CONFIG.supabaseUrl + "/rest/v1/rpc/lead_completar", {
+      method: "POST", headers: H,
+      body: JSON.stringify(Object.assign({ p_id: state.id, p_token: state.token }, campos))
+    });
+  } catch (e) { console.warn("No se pudo actualizar el lead", e); }
+}
+
+/* ---- Estado (se recuerda si el visitante vuelve en las 48 h) ---- */
+const KEY = "aq_" + CONFIG.campania;
+let state = { step: 1 };
+try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && Date.now() - s.t < 1728e5) state = s; } catch (e) {}
+const save = () => { try { state.t = state.t || Date.now(); localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} };
+
+const $ = id => document.getElementById(id);
+function go(n) {
+  state.step = n; save();
+  document.querySelectorAll(".step").forEach(s => s.classList.toggle("on", +s.dataset.step === n));
+  $("bar").style.width = Math.min(n, 4) / 4 * 100 + "%";
+  $("back").hidden = !(n === 3 || n === 4);
+  $("trust").hidden = n === 5;
+  $("count").textContent = n <= 4 ? (n === 4 ? "Paso 4 de 4 · opcional" : `Paso ${n} de 4`) : "";
+  document.querySelectorAll(".first-name").forEach(e => e.textContent = (state.nombre || "").split(" ")[0]);
+  const f = document.querySelector(`.step[data-step="${n}"] input:not([type=checkbox])`);
+  if (f && state.started) f.focus({ preventScroll: true });
+  if (n === 5) finalizar();
+}
+$("back").onclick = () => go(state.step - 1);
+
+/* Paso 1 — email (aquí se crea el contacto) */
+$("s1").addEventListener("submit", async e => {
+  e.preventDefault(); state.started = true;
+  if ($("empresa").value) return;
+  const email = $("email").value.trim().toLowerCase();
+  const okEmail = /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email);
+  $("f-email").classList.toggle("bad", !okEmail);
+  $("m-email").textContent = okEmail ? "" : "Revisa el email, parece que falta algo.";
+  $("f-ok").classList.toggle("bad", !$("ok").checked);
+  if (!okEmail || !$("ok").checked) return;
+  const b = e.submitter || e.target.querySelector("button"); b.disabled = true; b.textContent = "Guardando…";
+  try { Object.assign(state, await crearLead(email)); }
+  catch (err) { console.warn(err); }   // si falla, seguimos: el cliente no se queda bloqueado
+  state.email = email;
+  try { window.fbq && fbq("track", "Lead", { content_name: CONFIG.campania }); } catch (x) {}
+  try { window.gtag && gtag("event", "generate_lead", { campaign: CONFIG.campania }); } catch (x) {}
+  b.disabled = false; b.textContent = "Continuar";
+  go(2);
+});
+
+/* Paso 2 — nombre */
+$("s2").addEventListener("submit", e => {
+  e.preventDefault();
+  const n = $("nombre").value.trim();
+  const ok = n.length >= 2;
+  $("f-nombre").classList.toggle("bad", !ok);
+  $("m-nombre").textContent = ok ? "" : "Escribe tu nombre.";
+  if (!ok) return;
+  state.nombre = n.slice(0, 80);
+  completar({ p_nombre: state.nombre, p_paso: 2 });
+  go(3);
+});
+
+/* Paso 3 — con quién viaja */
+document.querySelectorAll(".choice").forEach(btn => btn.addEventListener("click", () => {
+  document.querySelectorAll(".choice").forEach(b => b.setAttribute("aria-pressed", b === btn));
+  state.compania = btn.dataset.v;
+  completar({ p_compania: state.compania, p_paso: 3 });
+  setTimeout(() => go(4), 220);
+}));
+
+/* Paso 4 — WhatsApp opcional */
+function normalizar(cc, raw) {
+  let n = (raw || "").replace(/[^\d+]/g, "");
+  if (n.startsWith("+")) return n.replace(/\D/g, "");
+  if (n.startsWith("00")) return n.slice(2);
+  n = n.replace(/\D/g, "");
+  if (n.startsWith(cc) && n.length > cc.length + 8) return n;
+  return cc + n;
+}
+$("s4").addEventListener("submit", e => {
+  e.preventDefault();
+  const cc = $("cc").value, raw = $("wa").value.trim();
+  if (!raw) { $("m-wa").textContent = "Escribe tu número o pulsa «Prefiero solo por email»."; $("f-wa").classList.add("bad"); return; }
+  const full = normalizar(cc, raw);
+  const ok = cc === "34" ? /^34[6789]\d{8}$/.test(full) : /^\d{9,15}$/.test(full);
+  $("f-wa").classList.toggle("bad", !ok);
+  $("m-wa").textContent = ok ? "" : "Revisa el número, parece que no está completo.";
+  if (!ok) return;
+  state.whatsapp = "+" + full;
+  completar({ p_whatsapp: state.whatsapp, p_paso: 4 });
+  go(5);
+});
+$("skip").onclick = () => { completar({ p_paso: 4 }); go(5); };
+
+/* Final */
+function finalizar() {
+  const txt = {
+    solo:   "Te preparamos los precios de camarote individual",
+    amigo:  "Te preparamos los precios de camarote doble para los dos",
+    buscar: "Empezamos a buscarte compañero de camarote"
+  }[state.compania] || "Te preparamos toda la información";
+  $("done-text").textContent = state.whatsapp
+    ? `${txt}. En unos minutos te llega todo por WhatsApp y a ${state.email || "tu email"}.`
+    : `${txt}. En unos minutos te llega todo a ${state.email || "tu email"}.`;
+}
+
+/* Si ManyChat pasa el nombre o el email en la URL, los rellenamos */
+if (qs.get("email")) $("email").value = qs.get("email").slice(0, 160);
+if (qs.get("nombre") || qs.get("first_name")) $("nombre").value = (qs.get("nombre") || qs.get("first_name")).slice(0, 80);
+if (state.nombre) $("nombre").value = state.nombre;
+go(state.id || state.step > 1 ? state.step : 1);
+
+/* Botón fijo en móvil: se esconde cuando el formulario está a la vista */
+if ("IntersectionObserver" in window)
+  new IntersectionObserver(([e]) => $("sticky").classList.toggle("hide", e.isIntersecting), { threshold: .15 }).observe($("form"));
+</script>
+</body>
+</html>
