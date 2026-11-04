@@ -460,13 +460,13 @@ $("skip").onclick = () => { completar({ p_paso: 4 }); go(5); };
 /* Final */
 function finalizar() {
   const txt = {
-    solo:   "Te preparamos los precios de camarote individual",
-    amigo:  "Te preparamos los precios de camarote doble para los dos",
-    buscar: "Empezamos a buscarte compañero de camarote"
-  }[state.compania] || "Te preparamos toda la información";
+    solo:   "Ya estamos preparando los precios de camarote individual",
+    amigo:  "Ya estamos preparando los precios de camarote doble para los dos",
+    buscar: "Ya estamos buscándote compañero de camarote"
+  }[state.compania] || "Ya estamos trabajando en tu petición";
   $("done-text").textContent = state.whatsapp
-    ? `${txt}. En unos minutos te llega todo por WhatsApp y a ${state.email || "tu email"}.`
-    : `${txt}. En unos minutos te llega todo a ${state.email || "tu email"}.`;
+    ? `${txt}. Te lo enviamos por WhatsApp y a ${state.email || "tu email"} muy pronto: solemos ser muy rápidos 😉`
+    : `${txt}. Te lo enviamos a ${state.email || "tu email"} muy pronto: solemos ser muy rápidos 😉`;
 }
 
 /* Si ManyChat pasa el nombre o el email en la URL, los rellenamos */
