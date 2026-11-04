@@ -360,6 +360,15 @@ async function completar(campos) {
       body: JSON.stringify(Object.assign({ p_id: state.id, p_token: state.token }, campos))
     });
   } catch (e) { console.warn("No se pudo actualizar el lead", e); }
+  sync();
+}
+/* Avisa al servidor para que pase el lead a Clientify (la clave de Clientify vive solo en el servidor) */
+function sync() {
+  if (!state.id) return;
+  try {
+    fetch("/api/lead", { method: "POST", keepalive: true, headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: state.id, token: state.token }) }).catch(() => {});
+  } catch (e) {}
 }
 
 /* ---- Estado (se recuerda si el visitante vuelve en las 48 h) ---- */
@@ -394,7 +403,7 @@ $("s1").addEventListener("submit", async e => {
   $("f-ok").classList.toggle("bad", !$("ok").checked);
   if (!okEmail || !$("ok").checked) return;
   const b = e.submitter || e.target.querySelector("button"); b.disabled = true; b.textContent = "Guardando…";
-  try { Object.assign(state, await crearLead(email)); }
+  try { Object.assign(state, await crearLead(email)); sync(); }
   catch (err) { console.warn(err); }   // si falla, seguimos: el cliente no se queda bloqueado
   state.email = email;
   try { window.fbq && fbq("track", "Lead", { content_name: CONFIG.campania }); } catch (x) {}

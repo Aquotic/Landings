@@ -1,0 +1,6 @@
+{
+  "name": "aquotic-landings",
+  "private": true,
+  "type": "module",
+  "description": "Landings de captación de Aquotic (Vercel + Supabase + Clientify)"
+}
