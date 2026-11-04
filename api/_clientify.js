@@ -41,8 +41,8 @@ export async function enviarLead(lead) {
   let id = lead.clientify_id || null;
 
   // 1) Buscar el contacto si aún no lo tenemos enlazado
-  if (!id && lead.email) id = primero(await cfy("/contacts/?query=" + encodeURIComponent(lead.email) + "&page_size=1", "GET"));
-  if (!id && lead.whatsapp) id = primero(await cfy("/contacts/?phone=" + encodeURIComponent(lead.whatsapp) + "&page_size=1", "GET"));
+  if (!id && lead.email) id = primero(await cfy("/contacts/?query=" + encodeURIComponent(lead.email) + "&page_size=1&fields=id", "GET"));
+  if (!id && lead.whatsapp) id = primero(await cfy("/contacts/?phone=" + encodeURIComponent(lead.whatsapp) + "&page_size=1&fields=id", "GET"));
 
   // 2) Crear o completar
   if (!id) {
@@ -59,7 +59,7 @@ export async function enviarLead(lead) {
     if (Object.keys(cambios).length) await cfy("/contacts/" + id + "/", "PATCH", cambios);
     if (lead.whatsapp) {
       try {
-        const c = await cfy("/contacts/" + id + "/", "GET");
+        const c = await cfy("/contacts/" + id + "/?fields=id,phones", "GET");
         const tiene = (c && c.phones || []).some(p => String(p.phone || "").replace(/\D/g, "").endsWith(lead.whatsapp.replace(/\D/g, "").slice(-9)));
         if (!tiene) await cfy("/contacts/" + id + "/phones/", "POST", { phone: lead.whatsapp, whatsapp: true });
       } catch { /* si falla el teléfono, el resto sigue */ }
