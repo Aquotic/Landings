@@ -46,6 +46,7 @@ h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,9vw,52px);line-
 .formwrap{padding-top:22px}
 .lead{font-size:17px;color:var(--soft)}
 .lead b{color:var(--ink)}
+.hot{display:block;color:var(--accent);font-weight:700;font-size:15px;margin-bottom:2px}
 .form{margin-top:16px}
 .bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden}
 .bar b{display:block;height:100%;width:25%;background:var(--accent);border-radius:4px;transition:width .4s ease}
@@ -103,6 +104,7 @@ section{padding:44px 0 0}
 .price{margin-top:44px;background:var(--navy);color:#fff;border-radius:20px;overflow:hidden}
 .price img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .price .in{padding:20px}
+.price .last{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:14px;padding:5px 12px;border-radius:999px;margin-bottom:12px}
 .price .from{font-size:15px;color:#c9d1de}
 .price .num{font-family:var(--serif);font-size:46px;line-height:1;margin-top:4px}
 .price .num small{font-family:var(--sans);font-size:16px;color:#c9d1de;margin-left:6px}
@@ -202,15 +204,15 @@ footer a{color:#fff}
 
 <div class="wrap">
   <div class="formwrap" id="form">
-    <p class="lead">Siete noches en grupo, desde <b>986 € por persona</b>. Déjanos tu WhatsApp y ve tus precios ahora mismo.</p>
+    <p class="lead"><span class="hot">¡Últimos camarotes interiores!</span> Siete noches en grupo, desde <b>986 € por persona</b>. Déjanos tu WhatsApp y ve tus precios ahora mismo.</p>
 
     <div class="form" aria-live="polite">
       <div class="bar" aria-hidden="true"><b id="bar"></b></div>
       <div class="stephead"><span id="count">Paso 1 de 4</span><button class="back" id="back" type="button" hidden>Atrás</button></div>
 
       <form class="step on" data-step="1" id="s1" novalidate>
-        <h2>¿A qué WhatsApp te mandamos la info?</h2>
-        <p class="help">Precios, camarotes y novedades del grupo. Nada de spam.</p>
+        <h2>¿Cuál es tu WhatsApp?</h2>
+        <p class="help">Para avisarte de camarotes y novedades del grupo. Nada de spam.</p>
         <div id="f-wa">
           <label class="lbl" for="wa">Tu WhatsApp</label>
           <div class="phone">
@@ -300,12 +302,13 @@ footer a{color:#fff}
   <div class="price">
     <img src="/crucero-gay/img/seaview-en-alta-mar.jpg" alt="El MSC Seaview en alta mar" loading="lazy" width="1024" height="683">
     <div class="in">
+      <p class="last">¡Últimos camarotes interiores!</p>
       <p class="from">Precio de grupo por persona, desde</p>
       <p class="num">986 €<small>en camarote doble</small></p>
       <ul>
         <li>Camarote individual desde 1.972 €</li>
         <li>Con balcón desde 1.376 € por persona</li>
-        <li>Incluye tasas, propinas, bebidas y actividades con el grupo</li>
+        <li>Incluye tasas, propinas, bebidas (Pack Easy) y actividades con el grupo</li>
         <li>Reservas tu plaza con 100 € por persona</li>
       </ul>
       <a class="btn main" href="#form">Quiero ver mis precios</a>
@@ -373,8 +376,8 @@ footer a{color:#fff}
     <p class="kicker">Preguntas rápidas</p>
     <h2 class="h2">Lo que más nos preguntan</h2>
     <details><summary>¿Tengo que pagar algo por apuntarme?</summary><p>No. Apuntarte solo sirve para ver tus precios y recibir la información. Cuando quieras, reservas tu plaza con 100 € por persona.</p></details>
-    <details><summary>¿Qué incluye el precio?</summary><p>El crucero de 7 noches, las tasas, las propinas, las bebidas y las actividades con el grupo. Las excursiones en los puertos y el seguro de viaje van aparte.</p></details>
-    <details><summary>¿Cómo se paga?</summary><p>Reservas con 100 € por persona (es un depósito no reembolsable). Un mes después pagas el 30 % y el resto, 65 días antes de la salida.</p></details>
+    <details><summary>¿Qué incluye el precio?</summary><p>El crucero de 7 noches, las tasas, las propinas, el paquete de bebidas Pack Easy y las actividades con el grupo. Las excursiones en los puertos y el seguro de viaje van aparte.</p></details>
+    <details><summary>¿Cómo se paga?</summary><p>Reservas con 100 € por persona (es un depósito no reembolsable). Un mes después pagas el 30 % del total y el resto, 65 días antes de la salida. Si reservas cuando faltan menos de 65 días, lo pagas todo de una vez.</p></details>
     <details><summary>¿Qué documentación necesito?</summary><p>DNI o pasaporte en vigor. Para la escala en Casablanca (Marruecos) te recomendamos pasaporte.</p></details>
     <details><summary>¿Cómo llego a Lisboa y vuelvo de Barcelona?</summary><p>Te ayudamos con los vuelos o el tren. Escríbeme por Instagram y lo vemos.</p></details>
     <details><summary>¿Quién está detrás?</summary><p>Aquotic, agencia de cruceros con 17 años de experiencia, y yo, Pablo, de @pablodecrucero. Te atiende una persona de principio a fin.</p></details>
@@ -538,7 +541,7 @@ function finalizar() {
     amigo:  "Ya tienes listos tus precios de camarote doble",
     buscar: "Ya tienes listos tus precios compartiendo camarote, y empezamos a buscarte compañero"
   }[state.compania] || "Ya tienes listos tus precios";
-  $("done-text").textContent = `${txt}. Además te escribimos por WhatsApp muy pronto.`;
+  $("done-text").textContent = `${txt}. Si tienes cualquier duda, escríbeme por Instagram y te contesto yo.`;
 }
 
 /* Si ManyChat pasa el nombre en la URL, lo rellenamos */
