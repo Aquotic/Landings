@@ -98,3 +98,47 @@ export async function enviarLead(lead) {
 
   return { id: String(id), errores };
 }
+
+// Reserva pagada: busca (o crea) el contacto, rellena aq_reserva y pone la etiqueta que avisa al equipo.
+// Nunca se mandan datos de documentos ni fechas de nacimiento.
+async function ponerCampos(id, valores, errores) {
+  const previos = {};
+  try {
+    const l = await cfy("/contacts/" + id + "/customfields/?page_size=100", "GET");
+    for (const v of (l && (l.results || l)) || []) if (v && v.field && v.id) previos[v.field] = v.id;
+  } catch { }
+  for (const [field, value] of Object.entries(valores)) {
+    if (value == null || value === "") continue;
+    try {
+      if (previos[field]) await cfy("/contacts/" + id + "/customfields/" + previos[field] + "/", "PATCH", { value: String(value) });
+      else await cfy("/contacts/" + id + "/customfields/", "POST", { field, value: String(value) });
+    } catch { errores.push(field); }
+  }
+}
+
+export async function marcarReserva(r) {
+  const camp = CAMPANIAS[r.campania] || { crucero: r.campania, fuente: "Landing", etiqueta: "landing-" + r.campania };
+  const errores = [];
+  let id = null;
+  if (r.email) id = primero(await cfy("/contacts/?query=" + encodeURIComponent(r.email) + "&page_size=1&fields=id", "GET"));
+  if (!id && r.telefono) id = primero(await cfy("/contacts/?phone=" + encodeURIComponent(r.telefono) + "&page_size=1&fields=id", "GET"));
+  if (!id) {
+    const c = await cfy("/contacts/", "POST", {
+      first_name: r.nombre || "", last_name: r.apellidos || "", contact_source: camp.fuente,
+      emails: r.email ? [{ email: r.email }] : [], phones: r.telefono ? [{ phone: r.telefono, whatsapp: true }] : []
+    });
+    id = c && c.id;
+    if (!id) throw new Error("Clientify no devolvió el id del contacto");
+  }
+  const cam = { interior: "Interior", balcon: "Balcón" }[r.camarote] || r.camarote;
+  const modo = { solo: "individual", amigo: "2 personas", buscar: "1 persona, busca compañero" }[r.modalidad] || r.modalidad;
+  const pagado = r.a_pagar_hoy >= r.total ? "pagado el total" : "señal pagada";
+  await ponerCampos(id, {
+    aq_reserva: `${camp.crucero} · ${cam} · ${modo} · total ${r.total} € · ${pagado} (${r.a_pagar_hoy} €) · ref R-${String(r.id).slice(0, 6).toUpperCase()}`,
+    aq_crucero: camp.crucero,
+    aq_num_cabinas: "1",
+    aq_ultima_accion: "reserva-pagada"
+  }, errores);
+  for (const name of ["reserva-" + r.campania + "-pagada"]) { try { await cfy("/contacts/" + id + "/tags/", "POST", { name }); } catch { errores.push("tag:" + name); } }
+  return { id: String(id), errores };
+}

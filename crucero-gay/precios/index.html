@@ -63,6 +63,7 @@ h1{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-.02em}
 .price span{font-size:14px;color:var(--soft)}
 .cabin .total{font-size:13.5px;color:var(--soft);margin-top:2px}
 
+.pick{display:inline-block;margin-top:12px;font-weight:700;font-size:15px;color:var(--accent-d);text-decoration:none}
 /* Qué incluye */
 .inc{margin-top:22px;border:1.5px solid var(--line);border-radius:18px;padding:18px}
 .inc h2{font-size:18px;font-weight:700}
@@ -130,12 +131,14 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       <p class="desc">Camarote sin ventana. Perfecto si pasas el día fuera y solo vuelves a dormir.</p>
       <div class="price"><b id="p-interior">986 €</b><span id="u-interior">por persona</span></div>
       <p class="total" id="x-interior"></p>
+      <a class="pick" id="r-interior" href="/crucero-gay/reserva?camarote=interior">Reservar interior →</a>
     </article>
     <article class="cabin" id="c-balcon">
       <div class="row"><h3>Balcón</h3><span class="tag" id="t-balcon">Con vistas al mar</span></div>
       <p class="desc">Camarote con balcón privado para ver amanecer en cada puerto.</p>
       <div class="price"><b id="p-balcon">1.376 €</b><span id="u-balcon">por persona</span></div>
       <p class="total" id="x-balcon"></p>
+      <a class="pick" id="r-balcon" href="/crucero-gay/reserva?camarote=balcon">Reservar balcón →</a>
     </article>
   </section>
 
@@ -161,11 +164,11 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     </div>
     <p class="small">Los 100 € de reserva son un depósito no reembolsable. Si reservas cuando faltan menos de 65 días para la salida, pagas el total de una vez.</p>
     <ol class="steps">
-      <li>Pulsa el botón y escríbeme por Instagram: «Quiero reservar» y qué camarote quieres.</li>
-      <li>Te pido los datos de los viajeros y te envío cómo pagar la señal.</li>
-      <li>Te confirmamos la reserva por WhatsApp y te guardamos el camarote.</li>
+      <li>Eliges camarote y rellenas los datos de los viajeros.</li>
+      <li>Pagas la reserva con tarjeta, de forma segura.</li>
+      <li>Te confirmamos el camarote con la naviera y te escribimos.</li>
     </ol>
-    <a class="btn main" id="btn-reservar" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">Quiero reservar</a>
+    <a class="btn main" id="btn-reservar" href="/crucero-gay/reserva">Quiero reservar</a>
     <a class="btn alt" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">¿Dudas? Escríbeme por Instagram</a>
   </section>
 
@@ -224,7 +227,8 @@ function pintar() {
   const nombre = guardado && guardado.nombre ? guardado.nombre.split(" ")[0] : "";
   const como = { solo: "voy solo", amigo: "voy con otra persona", buscar: "quiero que me busquéis compañero" }[opcion];
   const msg = `Hola${nombre ? ", soy " + nombre : ""} 👋 Quiero reservar ${CONFIG.crucero}. ${como[0].toUpperCase() + como.slice(1)}. ¿Qué camarotes quedan?`;
-  if (CONFIG.whatsapp) $("btn-reservar").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
+  $("btn-reservar").href = "/crucero-gay/reserva?viaja=" + opcion;
+  for (const c of ["interior", "balcon"]) $("r-" + c).href = "/crucero-gay/reserva?viaja=" + opcion + "&camarote=" + c;
 }
 document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { opcion = b.dataset.v; pintar(); }));
 pintar();

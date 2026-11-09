@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Reserva tu plaza · Crucero gay MSC Seaview 2027 | Aquotic</title>
+<meta name="description" content="Reserva tu plaza en el crucero gay del MSC Seaview, del 21 al 28 de marzo de 2027, con 100 € por persona.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Mismo sistema visual que el buscador de Aquotic */
+:root{
+  --bg:#ffffff; --sunk:#f6f4f4; --ink:#1d1a1c; --muted:#6f686b; --line:#e9e4e5;
+  --brand:#f0394e; --brand-d:#d42a3e; --brand-soft:#fdebed; --wa:#e3f5d8; --warm:#fbeedd; --good:#1f7a55;
+  --ring:0 1px 2px rgba(29,26,28,.06),0 6px 22px rgba(29,26,28,.08);
+  --pride:linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#24408e,#732982);
+  --f:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--f);font-size:16.5px;line-height:1.5;color:var(--ink);background:var(--sunk);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:8px}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Cabecera */
+.bar{background:#fff;border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.logo{font-weight:800;font-size:24px;letter-spacing:-.03em;color:var(--brand);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:16px;height:4px;border-radius:2px;background:var(--pride)}
+.ig{display:inline-flex;align-items:center;gap:7px;font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid var(--line);padding:7px 13px;border-radius:999px;background:#fff}
+.ig svg{width:16px;height:16px;color:var(--brand)}
+.trust{font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:4px 14px;padding:8px 0 0}
+.trust b{color:var(--ink)}
+.trust .st{color:#f5a524;letter-spacing:1px}
+.trust .ok::before{content:"✓ ";color:var(--good);font-weight:700}
+
+h1{font-size:28px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:22px 0 4px}
+.intro{color:var(--muted)}
+
+.grid{display:grid;gap:16px;margin:18px 0 40px}
+.card{background:#fff;border-radius:18px;box-shadow:var(--ring);padding:18px}
+.card h2{font-size:19px;font-weight:800;letter-spacing:-.01em}
+.card h2 small{display:block;font-size:14px;font-weight:500;color:var(--muted);letter-spacing:0;margin-top:2px}
+.num{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--brand-soft);color:var(--brand-d);font-size:13px;font-weight:800;margin-right:8px;vertical-align:2px}
+
+/* Crucero */
+.trip{display:flex;gap:14px;align-items:center;padding:12px}
+.trip img{width:96px;height:72px;object-fit:cover;border-radius:12px;flex:0 0 96px}
+.trip b{display:block;font-size:16.5px}
+.trip span{font-size:14px;color:var(--muted);display:block}
+
+/* Camarote y modalidad */
+.opts{display:grid;gap:10px;margin-top:14px}
+.opt{position:relative;display:block;border:1.5px solid var(--line);border-radius:14px;padding:13px 14px 13px 44px;cursor:pointer;background:#fff;transition:border-color .15s,background .15s}
+.opt input{position:absolute;left:15px;top:16px;width:18px;height:18px;accent-color:var(--brand)}
+.opt:has(input:checked){border-color:var(--brand);background:#fffafa}
+.opt b{font-size:16.5px}
+.opt .p{float:right;font-weight:800}
+.opt .d{display:block;font-size:14px;color:var(--muted)}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;color:#fff;background:var(--brand);padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:2px}
+.seg{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:var(--sunk);padding:4px;border-radius:999px}
+.seg label{text-align:center;font-size:14px;font-weight:600;color:var(--muted);padding:9px 4px;border-radius:999px;cursor:pointer;line-height:1.2}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(29,26,28,.12)}
+.seg label:has(input:focus-visible){outline:3px solid var(--brand)}
+.hint{font-size:14px;color:var(--muted);margin-top:8px}
+
+/* Formulario */
+fieldset{border:0;margin-top:16px}
+fieldset+fieldset{border-top:1px solid var(--line);padding-top:18px;margin-top:20px}
+legend{font-weight:700;font-size:16px;margin-bottom:10px}
+.row{display:grid;gap:12px}
+.f label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.f label em{font-style:normal;font-weight:400;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);-webkit-appearance:none;appearance:none;outline:none}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236f686b' stroke-width='1.6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+input:focus,select:focus{border-color:var(--ink)}
+.f.bad input,.f.bad select{border-color:#c4122f}
+.err{color:#c4122f;font-size:13.5px;margin-top:4px}
+.err:empty{display:none}
+.note{font-size:13.5px;color:var(--muted);background:var(--warm);border-radius:12px;padding:10px 12px;margin-top:14px}
+
+/* Resumen */
+.sum h2{margin-bottom:10px}
+.line{display:flex;justify-content:space-between;gap:12px;font-size:15px;padding:6px 0}
+.line span{color:var(--muted)}
+.line.tot{border-top:1px solid var(--line);margin-top:4px;padding-top:10px;font-weight:700}
+.line.tot span{color:var(--ink)}
+.today{margin-top:12px;background:var(--brand-soft);border-radius:14px;padding:12px 14px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.today span{font-weight:600}
+.today b{font-size:26px;font-weight:800;color:var(--brand-d);letter-spacing:-.02em}
+.plan{margin-top:12px;display:grid;gap:6px;font-size:14px}
+.plan div{display:flex;justify-content:space-between;gap:10px}
+.plan span{color:var(--muted)}
+.checks{margin-top:14px;display:grid;gap:10px}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.45}
+.chk input{width:19px;height:19px;flex:0 0 19px;margin-top:1px;accent-color:var(--brand)}
+.chk.bad{color:#c4122f}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:17px;padding:16px 22px;border-radius:999px;margin-top:16px;background:var(--brand);color:#fff;text-decoration:none;transition:background .15s,transform .1s}
+.btn:hover{background:var(--brand-d)}
+.btn:active{transform:scale(.985)}
+.btn[disabled]{opacity:.65;cursor:wait}
+.secure{display:flex;align-items:center;justify-content:center;gap:6px;font-size:13px;color:var(--muted);margin-top:10px;text-align:center}
+.secure svg{width:14px;height:14px;flex:0 0 14px}
+.alert{border-radius:14px;padding:12px 14px;font-size:14.5px;margin-top:16px;background:var(--warm)}
+.alert:empty{display:none}
+.alert.bad{background:#fde8ea;color:#8f1022}
+footer{padding:20px 0 40px;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (min-width:860px){
+  h1{font-size:34px}
+  .grid{grid-template-columns:1fr 360px;align-items:start}
+  .side{position:sticky;top:16px}
+  .row.two{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="wrap">
+  <a class="logo" href="/crucero-gay"><i aria-hidden="true"></i>Aquotic</a>
+  <a class="ig" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>¿Dudas?</a>
+</div></div>
+
+<main class="wrap">
+  <div class="trust" aria-label="Por qué Aquotic">
+    <span><span class="st" aria-hidden="true">★★★★★</span> <b>4,9</b> en Google · 1.937 opiniones</span>
+    <span class="ok">17 años especialistas en cruceros</span>
+    <span class="ok">Pago seguro</span>
+  </div>
+
+  <h1>Reserva tu plaza</h1>
+  <p class="intro">Tres pasos y tu camarote queda guardado al precio de grupo.</p>
+  <div class="alert" id="aviso" role="status"></div>
+
+  <form class="grid" id="f" novalidate>
+    <div class="main">
+      <div class="card trip">
+        <img src="/crucero-gay/img/seaview-en-alta-mar.jpg" alt="" width="1024" height="683">
+        <div><b>Crucero gay · MSC Seaview</b><span>21 al 28 de marzo de 2027 · 7 noches</span><span>Lisboa, Casablanca, Málaga, Palma, Barcelona</span></div>
+      </div>
+
+      <section class="card" style="margin-top:16px" aria-labelledby="h-cam">
+        <h2 id="h-cam"><span class="num">1</span>Tu camarote</h2>
+        <div class="seg" role="radiogroup" aria-label="Cómo viajas">
+          <label><input type="radio" name="modalidad" value="solo">Solo</label>
+          <label><input type="radio" name="modalidad" value="amigo" checked>Con alguien</label>
+          <label><input type="radio" name="modalidad" value="buscar">Busco compañero</label>
+        </div>
+        <p class="hint" id="m-hint"></p>
+        <div class="opts" role="radiogroup" aria-label="Tipo de camarote">
+          <label class="opt"><input type="radio" name="camarote" value="interior" checked><b>Interior</b><span class="tag">¡Últimos!</span><b class="p" id="p-interior"></b><span class="d">Sin ventana. Para quien pasa el día fuera.</span></label>
+          <label class="opt"><input type="radio" name="camarote" value="balcon"><b>Balcón</b><b class="p" id="p-balcon"></b><span class="d">Con balcón privado y vistas al mar.</span></label>
+        </div>
+      </section>
+
+      <section class="card" style="margin-top:16px" aria-labelledby="h-via">
+        <h2 id="h-via"><span class="num">2</span>Datos de los viajeros<small>Tal y como aparecen en el DNI o el pasaporte.</small></h2>
+        <div id="viajeros"></div>
+        <p class="note">Para bajar en Casablanca (Marruecos) se necesita <b>pasaporte</b> en vigor. Si aún no lo tienes, pon tu DNI y te avisamos con tiempo.</p>
+      </section>
+
+      <section class="card" style="margin-top:16px" aria-labelledby="h-con">
+        <h2 id="h-con"><span class="num">3</span>Contacto<small>Aquí te enviamos la confirmación y los siguientes pagos.</small></h2>
+        <div class="row two" style="margin-top:14px">
+          <div class="f" id="f-email"><label for="email">Email</label><input type="email" id="email" autocomplete="email" inputmode="email" maxlength="160"><div class="err"></div></div>
+          <div class="f" id="f-tel"><label for="tel">Móvil (WhatsApp)</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="600 000 000"><div class="err"></div></div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side">
+      <section class="card sum" aria-labelledby="h-sum">
+        <h2 id="h-sum">Tu reserva</h2>
+        <div class="line"><span id="s-cam">Interior · 2 personas</span><b id="s-pp"></b></div>
+        <div class="line tot"><span>Total del crucero</span><b id="s-tot"></b></div>
+        <p class="hint">Incluye tasas, propinas, paquete de bebidas Pack Easy y actividades con el grupo. Excursiones y seguro, aparte.</p>
+        <div class="today"><span>Pagas hoy</span><b id="s-hoy"></b></div>
+        <div class="plan" id="s-plan"></div>
+        <div class="checks">
+          <label class="chk" id="c-cond"><input type="checkbox" id="cond"><span>Entiendo que los <b id="s-dep">100 €</b> de reserva son un depósito <b>no reembolsable</b> y acepto el calendario de pagos.</span></label>
+          <label class="chk" id="c-priv"><input type="checkbox" id="priv"><span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y que Aquotic use estos datos para gestionar la reserva con la naviera.</span></label>
+        </div>
+        <button class="btn" type="submit" id="pagar">Pagar y reservar</button>
+        <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Pago seguro con Stripe. Nunca vemos ni guardamos tu tarjeta.</p>
+      </section>
+    </aside>
+  </form>
+</main>
+
+<footer><div class="wrap">
+  <span>© Aquotic · <a href="https://aquotic.com">aquotic.com</a></span>
+  <span><a href="/crucero-gay">Ver el crucero</a> · <a href="/privacidad">Privacidad</a></span>
+</div></footer>
+
+<script>
+const CONFIG = {
+  campania: "seaview-gay-2027",
+  salida: "2027-03-21",
+  diasUltimoPago: 65,
+  supabaseUrl: "https://eyuqdogsdwxnijswlads.supabase.co",
+  supabaseKey: "sb_publishable_sFyMqE-qsR5Pkg2RJidBVA_C9vFtxWX",
+  claveLanding: "aq_seaview-gay-2027"
+};
+/* Solo para mostrar: el precio que se cobra lo calcula el servidor */
+const PRECIOS = { interior: { solo: 1972, amigo: 986, buscar: 986 }, balcon: { solo: 2752, amigo: 1376, buscar: 1376 } };
+const HINT = {
+  solo: "Camarote para ti solo.",
+  amigo: "Camarote doble para ti y tu acompañante. Necesitamos los datos de los dos.",
+  buscar: "Pagas tu mitad del camarote doble y te buscamos compañero con un plan parecido."
+};
+
+const $ = id => document.getElementById(id);
+const eur = n => Math.round(n).toLocaleString("es-ES", { useGrouping: "always" }) + " €";
+const fecha = d => d.toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+const val = name => (document.querySelector(`input[name=${name}]:checked`) || {}).value;
+const esc = s => String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+
+/* Lo que ya sabemos de la landing (mismo navegador) */
+let lead = null;
+try { lead = JSON.parse(localStorage.getItem(CONFIG.claveLanding) || "null"); } catch (e) {}
+const qs = new URLSearchParams(location.search);
+const pre = { modalidad: qs.get("viaja") || (lead && lead.compania), camarote: qs.get("camarote") };
+if (["solo", "amigo", "buscar"].includes(pre.modalidad)) document.querySelector(`input[name=modalidad][value=${pre.modalidad}]`).checked = true;
+if (["interior", "balcon"].includes(pre.camarote)) document.querySelector(`input[name=camarote][value=${pre.camarote}]`).checked = true;
+if (lead) { if (lead.email) $("email").value = lead.email; if (lead.whatsapp) $("tel").value = lead.whatsapp; }
+if (qs.get("cancelado")) { $("aviso").textContent = "No se ha completado el pago, así que tu plaza aún no está reservada. Revisa los datos y vuelve a intentarlo."; }
+
+/* Viajeros */
+function viajeroHTML(i) {
+  const n = i + 1, p = `v${i}-`;
+  return `<fieldset data-i="${i}"><legend>Viajero ${n}${i === 0 ? " (titular)" : ""}</legend>
+  <div class="row two">
+    <div class="f"><label for="${p}nombre">Nombre</label><input type="text" id="${p}nombre" autocomplete="${i ? "off" : "given-name"}" maxlength="60"><div class="err"></div></div>
+    <div class="f"><label for="${p}apellidos">Apellidos</label><input type="text" id="${p}apellidos" autocomplete="${i ? "off" : "family-name"}" maxlength="80"><div class="err"></div></div>
+    <div class="f"><label for="${p}nacimiento">Fecha de nacimiento <em>dd/mm/aaaa</em></label><input type="text" id="${p}nacimiento" inputmode="numeric" placeholder="15/06/1975" maxlength="10"><div class="err"></div></div>
+    <div class="f"><label for="${p}nacionalidad">Nacionalidad</label><input type="text" id="${p}nacionalidad" value="Española" maxlength="40"><div class="err"></div></div>
+    <div class="f"><label for="${p}doc_tipo">Documento</label><select id="${p}doc_tipo"><option value="dni">DNI</option><option value="pasaporte">Pasaporte</option><option value="nie">NIE</option></select><div class="err"></div></div>
+    <div class="f"><label for="${p}doc_num">Número del documento</label><input type="text" id="${p}doc_num" autocomplete="off" autocapitalize="characters" maxlength="20"><div class="err"></div></div>
+  </div></fieldset>`;
+}
+function pintarViajeros() {
+  const plazas = val("modalidad") === "amigo" ? 2 : 1;
+  const box = $("viajeros");
+  const prev = [...box.querySelectorAll("input,select")].reduce((o, e) => (o[e.id] = e.value, o), {});
+  box.innerHTML = Array.from({ length: plazas }, (_, i) => viajeroHTML(i)).join("");
+  for (const [id, v] of Object.entries(prev)) if ($(id)) $(id).value = v;
+  if (!prev["v0-nombre"] && lead && lead.nombre) $("v0-nombre").value = lead.nombre.split(" ")[0];
+  box.querySelectorAll("[id$=nacimiento]").forEach(inp => inp.addEventListener("input", () => {
+    let d = inp.value.replace(/\D/g, "").slice(0, 8);
+    if (d.length > 4) d = d.slice(0, 2) + "/" + d.slice(2, 4) + "/" + d.slice(4);
+    else if (d.length > 2) d = d.slice(0, 2) + "/" + d.slice(2);
+    inp.value = d;
+  }));
+}
+
+/* Resumen y calendario de pagos */
+function calendario() {
+  const mod = val("modalidad"), cam = val("camarote");
+  const plazas = mod === "amigo" ? 2 : 1;
+  const pp = PRECIOS[cam][mod], total = pp * plazas;
+  const salida = new Date(CONFIG.salida + "T12:00:00");
+  const limite = new Date(salida); limite.setDate(limite.getDate() - CONFIG.diasUltimoPago);
+  const hoy = new Date();
+  const todo = hoy > limite;
+  const dep = 100 * plazas;
+  const hoyPaga = todo ? total : dep;
+  const plan = [];
+  if (!todo) {
+    const mes = new Date(hoy); mes.setMonth(mes.getMonth() + 1);
+    const p30 = Math.round(total * 0.3);
+    if (mes < limite) {
+      plan.push([`El ${fecha(mes)} (30 %)`, p30]);
+      plan.push([`El ${fecha(limite)} (resto)`, total - dep - p30]);
+    } else plan.push([`El ${fecha(limite)} (resto)`, total - dep]);
+  }
+  return { mod, cam, plazas, pp, total, hoyPaga, dep, todo, plan };
+}
+function pintar() {
+  const c = calendario();
+  $("m-hint").textContent = HINT[c.mod];
+  for (const k of ["interior", "balcon"]) $("p-" + k).textContent = eur(PRECIOS[k][c.mod]) + (c.mod === "solo" ? "" : " /pers.");
+  $("s-cam").textContent = (c.cam === "interior" ? "Interior" : "Balcón") + " · " +
+    (c.mod === "solo" ? "individual" : c.mod === "amigo" ? "2 personas" : "1 persona compartiendo");
+  $("s-pp").textContent = c.mod === "solo" ? eur(c.pp) : eur(c.pp) + " /pers.";
+  $("s-tot").textContent = eur(c.total);
+  $("s-hoy").textContent = eur(c.hoyPaga);
+  $("s-dep").textContent = c.todo ? eur(c.hoyPaga) : eur(c.dep);
+  $("s-plan").innerHTML = c.plan.map(([t, n]) => `<div><span>${esc(t)}</span><b>${eur(n)}</b></div>`).join("") ||
+    `<div><span>Faltan menos de ${CONFIG.diasUltimoPago} días para la salida: se paga todo al reservar.</span></div>`;
+  $("pagar").textContent = `Pagar ${eur(c.hoyPaga)} y reservar`;
+  if ($("viajeros").children.length !== c.plazas) pintarViajeros();
+}
+document.querySelectorAll("input[name=modalidad],input[name=camarote]").forEach(i => i.addEventListener("change", pintar));
+pintarViajeros(); pintar();
+
+/* Validación */
+function marcar(box, msg) { box.classList.toggle("bad", !!msg); const e = box.querySelector(".err"); if (e) e.textContent = msg || ""; return !msg; }
+function fechaISO(s) {
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s || ""); if (!m) return null;
+  const d = new Date(`${m[3]}-${m[2]}-${m[1]}T12:00:00`);
+  if (isNaN(d) || d.getDate() !== +m[1] || +m[3] < 1910 || d > new Date()) return null;
+  return `${m[3]}-${m[2]}-${m[1]}`;
+}
+function leerViajeros() {
+  let ok = true; const lista = [];
+  document.querySelectorAll("#viajeros fieldset").forEach(fs => {
+    const p = `v${fs.dataset.i}-`, g = k => $(p + k).value.trim(), box = k => $(p + k).closest(".f");
+    const v = { nombre: g("nombre"), apellidos: g("apellidos"), nacimiento: fechaISO(g("nacimiento")), nacionalidad: g("nacionalidad"),
+                doc_tipo: g("doc_tipo"), doc_num: g("doc_num").toUpperCase().replace(/[\s-]/g, "") };
+    ok = marcar(box("nombre"), v.nombre.length >= 2 ? "" : "Escribe el nombre.") && ok;
+    ok = marcar(box("apellidos"), v.apellidos.length >= 2 ? "" : "Escribe los apellidos.") && ok;
+    ok = marcar(box("nacimiento"), v.nacimiento ? "" : "Usa el formato dd/mm/aaaa.") && ok;
+    ok = marcar(box("nacionalidad"), v.nacionalidad.length >= 2 ? "" : "Escribe la nacionalidad.") && ok;
+    const docOk = v.doc_tipo === "dni" ? /^\d{8}[A-Z]$/.test(v.doc_num) : v.doc_tipo === "nie" ? /^[XYZ]\d{7}[A-Z]$/.test(v.doc_num) : /^[A-Z0-9]{5,20}$/.test(v.doc_num);
+    ok = marcar(box("doc_num"), docOk ? "" : v.doc_tipo === "dni" ? "Revisa el DNI: 8 números y una letra." : "Revisa el número del documento.") && ok;
+    lista.push(v);
+  });
+  return ok ? lista : null;
+}
+
+/* Enviar: guardamos la reserva y vamos a la pasarela de Stripe */
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  $("aviso").textContent = ""; $("aviso").className = "alert";
+  const viajeros = leerViajeros();
+  const email = $("email").value.trim().toLowerCase();
+  const tel = $("tel").value.replace(/[^\d+]/g, "");
+  let ok = !!viajeros;
+  ok = marcar($("f-email"), /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email) ? "" : "Revisa el email.") && ok;
+  ok = marcar($("f-tel"), tel.replace(/\D/g, "").length >= 9 ? "" : "Revisa el móvil.") && ok;
+  $("c-cond").classList.toggle("bad", !$("cond").checked);
+  $("c-priv").classList.toggle("bad", !$("priv").checked);
+  ok = ok && $("cond").checked && $("priv").checked;
+  if (!ok) { const b = document.querySelector(".bad"); if (b) b.scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+
+  const btn = $("pagar"); btn.disabled = true; const txt = btn.textContent; btn.textContent = "Preparando el pago…";
+  try {
+    const H = { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey, "Content-Type": "application/json" };
+    const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/rpc/reserva_crear", { method: "POST", headers: H, body: JSON.stringify({ p: {
+      campania: CONFIG.campania, camarote: val("camarote"), modalidad: val("modalidad"), email, telefono: tel,
+      viajeros, acepta: true, lead_id: lead && lead.id || null } }) });
+    if (!r.ok) throw new Error("reserva " + r.status + " " + (await r.text()).slice(0, 120));
+    const res = await r.json();
+    const s = await fetch("/api/reserva", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: res.id, token: res.token }) });
+    const j = await s.json().catch(() => ({}));
+    if (!s.ok || !j.url) throw new Error(j.error || "pago " + s.status);
+    location.href = j.url;
+  } catch (err) {
+    console.warn(err);
+    $("aviso").className = "alert bad";
+    $("aviso").innerHTML = 'No hemos podido abrir el pago. Inténtalo de nuevo en un momento o <a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">escríbeme por Instagram</a> y lo cerramos juntos.';
+    $("aviso").scrollIntoView({ behavior: "smooth", block: "center" });
+    btn.disabled = false; btn.textContent = txt;
+  }
+});
+</script>
+</body>
+</html>
