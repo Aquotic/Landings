@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Precios del crucero gay · MSC Seaview 2027 | Aquotic</title>
+<meta name="description" content="Precios por persona del crucero gay en el MSC Seaview, del 21 al 28 de marzo de 2027. Reserva con 100 € por persona.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#ffffff">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16141f; --soft:#5f5b6e; --line:#e8e6ee; --bg:#ffffff; --tint:#f6f5f9;
+  --accent:#d1155f; --accent-d:#b30f50; --soft-accent:#fff1f6;
+  --pride:linear-gradient(90deg,#e40303,#ff8c00,#ffed00,#008026,#24408e,#732982);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0 0}
+.logo{font-weight:800;font-size:18px;letter-spacing:-.3px;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:18px;height:4px;border-radius:2px;background:var(--pride)}
+.tel{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;text-decoration:none;background:var(--tint);padding:8px 14px;border-radius:999px}
+
+header{padding:28px 0 6px}
+h1{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-.02em}
+.meta{font-size:15.5px;color:var(--soft);margin-top:8px}
+
+/* Plazo del precio */
+.deadline{margin-top:20px;border-radius:16px;background:var(--soft-accent);padding:14px 16px;display:flex;gap:14px;align-items:center}
+.deadline .clock{display:flex;gap:6px;flex:0 0 auto}
+.deadline .clock div{min-width:44px;text-align:center;background:#fff;border-radius:10px;padding:6px 4px}
+.deadline .clock b{display:block;font-size:20px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:var(--accent-d)}
+.deadline .clock span{font-size:11px;color:var(--soft)}
+.deadline p{font-size:14px;line-height:1.35}
+.deadline p b{color:var(--accent-d)}
+
+/* Selector de cómo viajas */
+.who{margin-top:26px}
+.who h2,.cabins h2{font-size:18px;font-weight:700}
+.seg{margin-top:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;background:var(--tint);padding:4px;border-radius:14px}
+.seg button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--soft);padding:10px 4px;border-radius:11px;cursor:pointer;line-height:1.2}
+.seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(22,20,31,.12)}
+.who-note{font-size:14px;color:var(--soft);margin-top:10px;min-height:42px}
+
+/* Camarotes */
+.cabins{margin-top:18px;display:grid;gap:12px}
+.cabin{border:1.5px solid var(--line);border-radius:18px;padding:18px}
+.cabin.top-pick{border-color:var(--accent)}
+.cabin .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.cabin h3{font-size:18px;font-weight:700}
+.cabin .tag{font-size:12px;font-weight:700;color:var(--accent-d);background:var(--soft-accent);padding:3px 8px;border-radius:999px}
+.cabin .desc{font-size:14px;color:var(--soft);margin-top:4px}
+.price{margin-top:14px;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price b{font-size:34px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.price span{font-size:14px;color:var(--soft)}
+.cabin .total{font-size:13.5px;color:var(--soft);margin-top:2px}
+
+/* Reserva */
+.book{margin-top:22px;background:var(--ink);color:#fff;border-radius:20px;padding:22px 20px}
+.book h2{font-size:22px;font-weight:800;line-height:1.2}
+.book p{font-size:15px;color:#d9d6e3;margin-top:8px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;text-decoration:none;font-weight:700;font-size:17px;padding:16px;border-radius:12px;margin-top:16px}
+.btn.main{background:var(--accent);color:#fff}
+.btn.main:hover{background:var(--accent-d)}
+.btn.alt{background:rgba(255,255,255,.1);color:#fff;font-weight:600;font-size:15.5px;margin-top:10px}
+.steps{list-style:none;margin-top:16px;display:grid;gap:10px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:12px;font-size:14.5px;color:#e9e6f2}
+.steps li::before{content:counter(s);flex:0 0 24px;height:24px;border-radius:50%;background:rgba(255,255,255,.14);display:grid;place-items:center;font-size:13px;font-weight:700}
+
+.notes{font-size:13px;color:var(--soft);margin:22px 0 0;display:grid;gap:6px}
+footer{margin-top:28px;background:var(--tint);padding:20px 0 40px;font-size:13px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (min-width:900px){ .wrap{max-width:560px} h1{font-size:38px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a class="logo" href="/crucero-gay"><i aria-hidden="true"></i>aquotic</a>
+    <a class="tel" href="tel:+34910616100">91 061 61 00</a>
+  </div>
+
+  <header>
+    <h1>Tus precios del crucero gay</h1>
+    <p class="meta">MSC Seaview, del 21 al 28 de marzo de 2027. De Lisboa a Barcelona, 7 noches.</p>
+  </header>
+
+  <div class="deadline" id="deadline" aria-live="polite">
+    <div class="clock" aria-hidden="true">
+      <div><b id="cd-d">-</b><span>días</span></div>
+      <div><b id="cd-h">-</b><span>horas</span></div>
+      <div><b id="cd-m">-</b><span>min</span></div>
+    </div>
+    <p>Precio de grupo garantizado hasta el <b id="cd-date">-</b>. Después puede cambiar según la disponibilidad de la naviera.</p>
+  </div>
+
+  <section class="who">
+    <h2>¿Cómo vas a viajar?</h2>
+    <div class="seg" role="group" aria-label="Cómo viajas">
+      <button type="button" data-v="solo" aria-pressed="false">Solo</button>
+      <button type="button" data-v="amigo" aria-pressed="true">Con alguien</button>
+      <button type="button" data-v="buscar" aria-pressed="false">Busco compañero</button>
+    </div>
+    <p class="who-note" id="who-note"></p>
+  </section>
+
+  <section class="cabins" aria-label="Precios por camarote">
+    <article class="cabin" id="c-interior">
+      <div class="row"><h3>Interior</h3><span class="tag" id="t-interior">El más económico</span></div>
+      <p class="desc">Camarote sin ventana. Perfecto si vas a pasar el día fuera y la noche de fiesta.</p>
+      <div class="price"><b id="p-interior">986 €</b><span id="u-interior">por persona</span></div>
+      <p class="total" id="x-interior"></p>
+    </article>
+    <article class="cabin" id="c-balcon">
+      <div class="row"><h3>Balcón</h3><span class="tag" id="t-balcon">Con vistas al mar</span></div>
+      <p class="desc">Camarote con balcón privado para ver amanecer en cada puerto.</p>
+      <div class="price"><b id="p-balcon">1.376 €</b><span id="u-balcon">por persona</span></div>
+      <p class="total" id="x-balcon"></p>
+    </article>
+  </section>
+
+  <section class="book" id="reservar">
+    <h2>Reserva tu plaza con 100 € por persona</h2>
+    <p>El resto lo pagas más adelante. Así te aseguras el precio y el camarote.</p>
+    <ol class="steps">
+      <li>Pulsa el botón y escríbenos qué camarote quieres.</li>
+      <li>Te pedimos los datos de los viajeros y te enviamos cómo pagar la señal.</li>
+      <li>Te confirmamos la reserva por WhatsApp y te guardamos el camarote.</li>
+    </ol>
+    <a class="btn main" id="btn-reservar" href="tel:+34910616100">Quiero reservar</a>
+    <a class="btn alt" href="tel:+34910616100">O llámanos: 91 061 61 00</a>
+  </section>
+
+  <div class="notes">
+    <p>Precios por persona en el camarote indicado, para el crucero del 21 al 28 de marzo de 2027.</p>
+    <p>Horario de atención: lunes a viernes de 10:00 a 20:00.</p>
+  </div>
+</div>
+
+<footer><div class="wrap">
+  <span>© Aquotic · <a href="https://aquotic.com">aquotic.com</a></span>
+  <span><a href="/crucero-gay">Ver el crucero</a> · <a href="/privacidad">Privacidad</a></span>
+</div></footer>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN
+   ========================================================= */
+const CONFIG = {
+  whatsapp: "",            // ⚠️ número del WhatsApp de Aquotic con prefijo y sin "+", p. ej. "34600000000". Vacío = el botón llama por teléfono
+  crucero: "el crucero gay del MSC Seaview (21-28 marzo 2027)",
+  horasGarantia: 72,        // el precio se garantiza estas horas desde que la persona se apunta
+  claveLanding: "aq_seaview-gay-2027"
+};
+const PRECIOS = {           // por persona
+  interior: { solo: 1972, amigo: 986, buscar: 986 },
+  balcon:   { solo: 2752, amigo: 1376, buscar: 1376 }
+};
+const NOTAS = {
+  solo: "Camarote para ti solo. El precio es el total del camarote.",
+  amigo: "Precio por persona compartiendo camarote doble con tu acompañante.",
+  buscar: "Te buscamos compañero con un plan parecido y cada uno paga su mitad del camarote doble."
+};
+
+const $ = id => document.getElementById(id);
+const eur = n => n.toLocaleString("es-ES", { useGrouping: "always" }) + " €";
+
+/* ---- Lo que el visitante ya eligió en la landing (mismo navegador) ---- */
+let guardado = null;
+try { guardado = JSON.parse(localStorage.getItem(CONFIG.claveLanding) || "null"); } catch (e) {}
+const qs = new URLSearchParams(location.search);
+let opcion = ["solo", "amigo", "buscar"].includes(qs.get("viaja")) ? qs.get("viaja")
+  : (guardado && ["solo", "amigo", "buscar"].includes(guardado.compania) ? guardado.compania : "amigo");
+
+function pintar() {
+  document.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === opcion));
+  $("who-note").textContent = NOTAS[opcion];
+  for (const c of ["interior", "balcon"]) {
+    const p = PRECIOS[c][opcion];
+    $("p-" + c).textContent = eur(p);
+    $("u-" + c).textContent = opcion === "solo" ? "camarote individual" : "por persona";
+    $("x-" + c).textContent = opcion === "solo" ? "Señal para reservar: 100 €"
+      : opcion === "buscar" ? "Tú pagas solo tu parte · señal 100 €"
+      : "Para los dos: " + eur(p * 2) + " · señal 100 € por persona";
+  }
+  const nombre = guardado && guardado.nombre ? guardado.nombre.split(" ")[0] : "";
+  const como = { solo: "voy solo", amigo: "voy con otra persona", buscar: "quiero que me busquéis compañero" }[opcion];
+  const msg = `Hola${nombre ? ", soy " + nombre : ""} 👋 Quiero reservar ${CONFIG.crucero}. ${como[0].toUpperCase() + como.slice(1)}. ¿Qué camarotes quedan?`;
+  $("btn-reservar").href = CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}` : "tel:+34910616100";
+  if (CONFIG.whatsapp) { $("btn-reservar").target = "_blank"; $("btn-reservar").rel = "noopener"; }
+}
+document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { opcion = b.dataset.v; pintar(); }));
+pintar();
+
+/* ---- Plazo del precio, sin mantenimiento ----
+   1) Si se apuntó en la landing desde este navegador: 72 h desde que se apuntó.
+   2) Si no (otro móvil, enlace reenviado): hasta el domingo a las 23:59.
+      Si al domingo le quedan menos de 48 h, hasta el domingo siguiente. */
+function plazo() {
+  const ahora = Date.now();
+  if (guardado && guardado.t) {
+    const fin = guardado.t + CONFIG.horasGarantia * 36e5;
+    if (fin > ahora) return new Date(fin);
+  }
+  const d = new Date(); d.setHours(23, 59, 0, 0);
+  d.setDate(d.getDate() + ((7 - d.getDay()) % 7));
+  if (d.getTime() - ahora < 48 * 36e5) d.setDate(d.getDate() + 7);
+  return d;
+}
+const fin = plazo();
+$("cd-date").textContent = fin.toLocaleDateString("es-ES", { weekday: "long", day: "numeric", month: "long" }) +
+  " a las " + fin.toLocaleTimeString("es-ES", { hour: "2-digit", minute: "2-digit" });
+function tick() {
+  const ms = Math.max(0, fin - Date.now());
+  $("cd-d").textContent = Math.floor(ms / 864e5);
+  $("cd-h").textContent = Math.floor(ms / 36e5) % 24;
+  $("cd-m").textContent = Math.floor(ms / 6e4) % 60;
+}
+tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>
