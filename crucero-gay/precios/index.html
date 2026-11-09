@@ -62,6 +62,18 @@ h1{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-.02em}
 .price span{font-size:14px;color:var(--soft)}
 .cabin .total{font-size:13.5px;color:var(--soft);margin-top:2px}
 
+/* Qué incluye */
+.inc{margin-top:22px;border:1.5px solid var(--line);border-radius:18px;padding:18px}
+.inc h2{font-size:18px;font-weight:700}
+.inc ul{list-style:none;margin-top:10px;display:grid;gap:7px;font-size:15px}
+.inc li{display:flex;gap:10px}
+.inc li::before{content:"✓";color:var(--accent);font-weight:800}
+.inc li.no{color:var(--soft)}
+.inc li.no::before{content:"–";color:var(--soft)}
+.plan{margin-top:16px;display:grid;gap:8px}
+.plan div{display:flex;justify-content:space-between;gap:12px;background:rgba(255,255,255,.08);border-radius:10px;padding:10px 12px;font-size:14.5px}
+.plan b{white-space:nowrap}
+.small{font-size:13px!important;color:#b9b5c7!important}
 /* Reserva */
 .book{margin-top:22px;background:var(--ink);color:#fff;border-radius:20px;padding:22px 20px}
 .book h2{font-size:22px;font-weight:800;line-height:1.2}
@@ -114,7 +126,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   <section class="cabins" aria-label="Precios por camarote">
     <article class="cabin" id="c-interior">
       <div class="row"><h3>Interior</h3><span class="tag" id="t-interior">El más económico</span></div>
-      <p class="desc">Camarote sin ventana. Perfecto si vas a pasar el día fuera y la noche de fiesta.</p>
+      <p class="desc">Camarote sin ventana. Perfecto si pasas el día fuera y solo vuelves a dormir.</p>
       <div class="price"><b id="p-interior">986 €</b><span id="u-interior">por persona</span></div>
       <p class="total" id="x-interior"></p>
     </article>
@@ -126,9 +138,27 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     </article>
   </section>
 
+  <section class="inc">
+    <h2>Qué incluye el precio de grupo</h2>
+    <ul>
+      <li>Crucero de 7 noches en el camarote elegido</li>
+      <li>Tasas de embarque</li>
+      <li>Propinas</li>
+      <li>Bebidas</li>
+      <li>Actividades con el grupo</li>
+      <li class="no">Excursiones en los puertos y seguro de viaje, aparte</li>
+    </ul>
+  </section>
+
   <section class="book" id="reservar">
     <h2>Reserva tu plaza con 100 € por persona</h2>
-    <p>El resto lo pagas más adelante. Así te aseguras el precio y el camarote.</p>
+    <p>Así te aseguras el precio de grupo y el camarote. El resto lo pagas en dos plazos:</p>
+    <div class="plan">
+      <div><span>Para reservar</span><b>100 € por persona</b></div>
+      <div><span>Un mes después</span><b>30 %</b></div>
+      <div><span>65 días antes de salir</span><b>El resto</b></div>
+    </div>
+    <p class="small">Los 100 € de reserva son un depósito no reembolsable.</p>
     <ol class="steps">
       <li>Pulsa el botón y escríbeme por Instagram: «Quiero reservar» y qué camarote quieres.</li>
       <li>Te pido los datos de los viajeros y te envío cómo pagar la señal.</li>

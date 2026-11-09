@@ -110,6 +110,11 @@ section{padding:44px 0 0}
 .price li::before{content:"·";color:var(--accent);font-weight:700;margin-right:8px}
 .price .btn{margin-top:18px}
 
+/* Fotos de gente */
+.people{margin-top:18px;display:grid;grid-template-columns:3fr 2fr;gap:10px}
+.people img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;border-radius:16px}
+.people img:first-child{aspect-ratio:4/5}
+.wide{margin-top:18px;border-radius:18px;width:100%;aspect-ratio:3/2;object-fit:cover}
 /* Dudas */
 .doubts{margin-top:18px;display:grid;gap:12px}
 .doubt{background:var(--sand);border-radius:16px;padding:16px 18px}
@@ -167,6 +172,14 @@ footer a{color:#fff}
 .sticky.hide{opacity:0;transform:translateY(20px);pointer-events:none}
 @media (min-width:900px){
   .wrap{max-width:600px}
+  .hero{display:grid;grid-template-columns:58% 42%;min-height:540px}
+  .hero img{height:100%;min-height:540px;object-position:center}
+  .hero::after{width:58%;background:linear-gradient(180deg,rgba(14,23,38,.5) 0%,rgba(14,23,38,0) 25%)}
+  .hero .top{max-width:none;padding:20px 32px 0}
+  .hero .copy{position:relative;bottom:auto;align-self:center;margin:0;padding:0 48px;max-width:560px}
+  h1{font-size:56px}
+  .hero .meta{font-size:18px;margin-top:14px}
+  .hero .pill{background:rgba(14,23,38,.35)}
   .gallery{grid-auto-columns:46%}
   .sticky{display:none}
 }
@@ -292,6 +305,7 @@ footer a{color:#fff}
       <ul>
         <li>Camarote individual desde 1.972 €</li>
         <li>Con balcón desde 1.376 € por persona</li>
+        <li>Incluye tasas, propinas, bebidas y actividades con el grupo</li>
         <li>Reservas tu plaza con 100 € por persona</li>
       </ul>
       <a class="btn main" href="#form">Quiero ver mis precios</a>
@@ -301,6 +315,10 @@ footer a{color:#fff}
   <section>
     <p class="kicker">Tus dudas</p>
     <h2 class="h2">¿Te suena alguna de estas?</h2>
+    <div class="people">
+      <img src="https://images.unsplash.com/photo-1650550740287-42e562ea11d5?w=900&q=70&auto=format&fit=crop" alt="Dos hombres en una terraza con vistas a Lisboa" loading="lazy" width="900" height="1125">
+      <img src="https://images.unsplash.com/photo-1650550740607-24aa0eff1c4a?w=600&q=70&auto=format&fit=crop" alt="Dos hombres abrazados en un mirador de Lisboa" loading="lazy" width="600" height="750">
+    </div>
     <div class="doubts">
       <div class="doubt"><q>No me apetece ir solo y no conocer a nadie</q><p>Viajas con un grupo organizado por Aquotic. Y si quieres, te buscamos compañero de camarote: llegas al barco conociendo ya a alguien.</p></div>
       <div class="doubt"><q>El camarote individual se dispara de precio</q><p>Compartiendo pagas la mitad: desde 986 € por persona en interior o 1.376 € con balcón. Si no tienes con quién, te lo buscamos nosotros.</p></div>
@@ -343,6 +361,7 @@ footer a{color:#fff}
     <p class="kicker">Si viajas solo</p>
     <h2 class="h2">Te buscamos compañero de camarote</h2>
     <p class="sub">Compartir abarata el viaje y llegas al barco conociendo ya a alguien.</p>
+    <img class="wide" src="https://images.unsplash.com/photo-1548984120-2d55e48b40bd?w=900&q=70&auto=format&fit=crop" alt="Dos amigos riendo en un barco" loading="lazy" width="900" height="600">
     <ol class="steps3">
       <li><em>1</em><span><b>Nos cuentas cómo eres</b><span>Edad aproximada, si eres más de fiesta o de tumbona y desde dónde viajas.</span></span></li>
       <li><em>2</em><span><b>Te proponemos compañero</b><span>Alguien con un plan parecido. Si no os encaja, buscamos otro.</span></span></li>
@@ -354,6 +373,8 @@ footer a{color:#fff}
     <p class="kicker">Preguntas rápidas</p>
     <h2 class="h2">Lo que más nos preguntan</h2>
     <details><summary>¿Tengo que pagar algo por apuntarme?</summary><p>No. Apuntarte solo sirve para ver tus precios y recibir la información. Cuando quieras, reservas tu plaza con 100 € por persona.</p></details>
+    <details><summary>¿Qué incluye el precio?</summary><p>El crucero de 7 noches, las tasas, las propinas, las bebidas y las actividades con el grupo. Las excursiones en los puertos y el seguro de viaje van aparte.</p></details>
+    <details><summary>¿Cómo se paga?</summary><p>Reservas con 100 € por persona (es un depósito no reembolsable). Un mes después pagas el 30 % y el resto, 65 días antes de la salida.</p></details>
     <details><summary>¿Qué documentación necesito?</summary><p>DNI o pasaporte en vigor. Para la escala en Casablanca (Marruecos) te recomendamos pasaporte.</p></details>
     <details><summary>¿Cómo llego a Lisboa y vuelvo de Barcelona?</summary><p>Te ayudamos con los vuelos o el tren. Escríbeme por Instagram y lo vemos.</p></details>
     <details><summary>¿Quién está detrás?</summary><p>Aquotic, agencia de cruceros con 17 años de experiencia, y yo, Pablo, de @pablodecrucero. Te atiende una persona de principio a fin.</p></details>
