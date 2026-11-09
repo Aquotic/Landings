@@ -162,9 +162,9 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
       </section>
 
       <section class="card" style="margin-top:16px" aria-labelledby="h-via">
-        <h2 id="h-via"><span class="num">2</span>Datos de los viajeros<small>Tal y como aparecen en el DNI o el pasaporte.</small></h2>
+        <h2 id="h-via"><span class="num">2</span>Datos de los viajeros<small>Nombre y apellidos tal y como aparecen en el DNI o el pasaporte.</small></h2>
         <div id="viajeros"></div>
-        <p class="note">Para bajar en Casablanca (Marruecos) se necesita <b>pasaporte</b> en vigor. Si aún no lo tienes, pon tu DNI y te avisamos con tiempo.</p>
+        <p class="note">El número de DNI o pasaporte te lo pedimos más adelante, con calma. Para bajar en Casablanca (Marruecos) se necesita <b>pasaporte</b> en vigor.</p>
       </section>
 
       <section class="card" style="margin-top:16px" aria-labelledby="h-con">
@@ -244,8 +244,6 @@ function viajeroHTML(i) {
     <div class="f"><label for="${p}apellidos">Apellidos</label><input type="text" id="${p}apellidos" autocomplete="${i ? "off" : "family-name"}" maxlength="80"><div class="err"></div></div>
     <div class="f"><label for="${p}nacimiento">Fecha de nacimiento <em>dd/mm/aaaa</em></label><input type="text" id="${p}nacimiento" inputmode="numeric" placeholder="15/06/1975" maxlength="10"><div class="err"></div></div>
     <div class="f"><label for="${p}nacionalidad">Nacionalidad</label><input type="text" id="${p}nacionalidad" value="Española" maxlength="40"><div class="err"></div></div>
-    <div class="f"><label for="${p}doc_tipo">Documento</label><select id="${p}doc_tipo"><option value="dni">DNI</option><option value="pasaporte">Pasaporte</option><option value="nie">NIE</option></select><div class="err"></div></div>
-    <div class="f"><label for="${p}doc_num">Número del documento</label><input type="text" id="${p}doc_num" autocomplete="off" autocapitalize="characters" maxlength="20"><div class="err"></div></div>
   </div></fieldset>`;
 }
 function pintarViajeros() {
@@ -316,13 +314,11 @@ function leerViajeros() {
   document.querySelectorAll("#viajeros fieldset").forEach(fs => {
     const p = `v${fs.dataset.i}-`, g = k => $(p + k).value.trim(), box = k => $(p + k).closest(".f");
     const v = { nombre: g("nombre"), apellidos: g("apellidos"), nacimiento: fechaISO(g("nacimiento")), nacionalidad: g("nacionalidad"),
-                doc_tipo: g("doc_tipo"), doc_num: g("doc_num").toUpperCase().replace(/[\s-]/g, "") };
+              };
     ok = marcar(box("nombre"), v.nombre.length >= 2 ? "" : "Escribe el nombre.") && ok;
     ok = marcar(box("apellidos"), v.apellidos.length >= 2 ? "" : "Escribe los apellidos.") && ok;
     ok = marcar(box("nacimiento"), v.nacimiento ? "" : "Usa el formato dd/mm/aaaa.") && ok;
     ok = marcar(box("nacionalidad"), v.nacionalidad.length >= 2 ? "" : "Escribe la nacionalidad.") && ok;
-    const docOk = v.doc_tipo === "dni" ? /^\d{8}[A-Z]$/.test(v.doc_num) : v.doc_tipo === "nie" ? /^[XYZ]\d{7}[A-Z]$/.test(v.doc_num) : /^[A-Z0-9]{5,20}$/.test(v.doc_num);
-    ok = marcar(box("doc_num"), docOk ? "" : v.doc_tipo === "dni" ? "Revisa el DNI: 8 números y una letra." : "Revisa el número del documento.") && ok;
     lista.push(v);
   });
   return ok ? lista : null;
