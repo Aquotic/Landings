@@ -35,7 +35,7 @@ async function cfy(ruta, metodo, cuerpo) {
 
 const primero = l => l && l.results && l.results[0] && l.results[0].id;
 
-// paso: 1 email · 2 nombre · 3 con quién viaja · 4 WhatsApp (o lo salta) = formulario completo
+// paso: 1 WhatsApp · 2 nombre · 3 con quién viaja · 4 email (o lo salta) = formulario completo
 export async function enviarLead(lead) {
   const camp = CAMPANIAS[lead.campania] || { crucero: lead.campania, origen: "landing", fuente: "Landing", etiqueta: "landing-" + lead.campania };
   let id = lead.clientify_id || null;
@@ -69,7 +69,7 @@ export async function enviarLead(lead) {
   // 3) Campos aq_* (uno a uno; si ya existe, se actualiza)
   const acomp = ACOMPANANTE[lead.compania];
   const valores = {
-    aq_origen: camp.origen + (lead.utm_source ? " · " + lead.utm_source : ""),
+    aq_origen: camp.origen + (lead.utm_source ? " · " + lead.utm_source : "") + (lead.instagram ? " · @" + lead.instagram : ""),
     aq_crucero: camp.crucero,
     aq_acompanante: acomp && acomp.texto,
     aq_ultima_accion: lead.paso >= 4 ? "landing-formulario-completo" : "landing-paso-" + lead.paso,
