@@ -25,6 +25,7 @@ a{color:inherit}
 .top{display:flex;justify-content:space-between;align-items:center;padding:16px 0 0}
 .logo{font-weight:800;font-size:18px;letter-spacing:-.3px;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo i{width:18px;height:4px;border-radius:2px;background:var(--pride)}
+.tel .i{width:18px;height:18px;color:var(--accent)}
 .tel{display:inline-flex;align-items:center;gap:8px;font-size:15px;font-weight:700;text-decoration:none;background:var(--tint);padding:8px 14px;border-radius:999px}
 
 header{padding:28px 0 6px}
@@ -83,7 +84,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 <div class="wrap">
   <div class="top">
     <a class="logo" href="/crucero-gay"><i aria-hidden="true"></i>aquotic</a>
-    <a class="tel" href="tel:+34910616100">91 061 61 00</a>
+    <a class="tel" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener"><svg class="i" aria-hidden="true" width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Escríbeme</a>
   </div>
 
   <header>
@@ -129,17 +130,17 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
     <h2>Reserva tu plaza con 100 € por persona</h2>
     <p>El resto lo pagas más adelante. Así te aseguras el precio y el camarote.</p>
     <ol class="steps">
-      <li>Pulsa el botón y escríbenos qué camarote quieres.</li>
-      <li>Te pedimos los datos de los viajeros y te enviamos cómo pagar la señal.</li>
+      <li>Pulsa el botón y escríbeme por Instagram: «Quiero reservar» y qué camarote quieres.</li>
+      <li>Te pido los datos de los viajeros y te envío cómo pagar la señal.</li>
       <li>Te confirmamos la reserva por WhatsApp y te guardamos el camarote.</li>
     </ol>
-    <a class="btn main" id="btn-reservar" href="tel:+34910616100">Quiero reservar</a>
-    <a class="btn alt" href="tel:+34910616100">O llámanos: 91 061 61 00</a>
+    <a class="btn main" id="btn-reservar" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">Quiero reservar</a>
+    <a class="btn alt" href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">¿Dudas? Escríbeme por Instagram</a>
   </section>
 
   <div class="notes">
     <p>Precios por persona en el camarote indicado, para el crucero del 21 al 28 de marzo de 2027.</p>
-    <p>Horario de atención: lunes a viernes de 10:00 a 20:00.</p>
+    <p>Te contesto personalmente por Instagram, en <a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">@pablodecrucero</a>.</p>
   </div>
 </div>
 
@@ -153,7 +154,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
    CONFIGURACIÓN
    ========================================================= */
 const CONFIG = {
-  whatsapp: "",            // ⚠️ número del WhatsApp de Aquotic con prefijo y sin "+", p. ej. "34600000000". Vacío = el botón llama por teléfono
+  whatsapp: "",            // vacío = el botón «Quiero reservar» abre el DM de Instagram de @pablodecrucero
   crucero: "el crucero gay del MSC Seaview (21-28 marzo 2027)",
   horasGarantia: 72,        // el precio se garantiza estas horas desde que la persona se apunta
   claveLanding: "aq_seaview-gay-2027"
@@ -192,8 +193,7 @@ function pintar() {
   const nombre = guardado && guardado.nombre ? guardado.nombre.split(" ")[0] : "";
   const como = { solo: "voy solo", amigo: "voy con otra persona", buscar: "quiero que me busquéis compañero" }[opcion];
   const msg = `Hola${nombre ? ", soy " + nombre : ""} 👋 Quiero reservar ${CONFIG.crucero}. ${como[0].toUpperCase() + como.slice(1)}. ¿Qué camarotes quedan?`;
-  $("btn-reservar").href = CONFIG.whatsapp ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}` : "tel:+34910616100";
-  if (CONFIG.whatsapp) { $("btn-reservar").target = "_blank"; $("btn-reservar").rel = "noopener"; }
+  if (CONFIG.whatsapp) $("btn-reservar").href = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg)}`;
 }
 document.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { opcion = b.dataset.v; pintar(); }));
 pintar();
