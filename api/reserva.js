@@ -3,8 +3,9 @@
 import { rpc } from "./_supabase.js";
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
-const ORIGENES = ["https://buscadornuevo.vercel.app", "https://crucerosaquotic.vercel.app", "https://landings-ashen.vercel.app",
-  "https://www.aquotic.com", "https://aquotic.com"];
+// Dominios desde los que se puede abrir el pago (los de Aquotic y los de Vercel del buscador y las landings)
+const permitido = o => /^https:\/\/([a-z0-9-]+\.)*aquotic\.com$/.test(o || "") ||
+  ["https://buscadornuevo.vercel.app", "https://crucerosaquotic.vercel.app", "https://landings-ashen.vercel.app"].includes(o);
 const PRODUCTOS = {
   "seaview-gay-2027": { nombre: "Crucero gay MSC Seaview · 21-28 marzo 2027", ruta: "/crucero-gay/reserva" }
 };
@@ -14,7 +15,7 @@ const MODO = { solo: "individual", amigo: "2 personas", buscar: "1 persona compa
 export default async function handler(req, res) {
   res.setHeader("cache-control", "no-store");
   // La página puede estar servida desde el dominio del buscador: permitimos esa llamada (CORS)
-  if (ORIGENES.includes(req.headers.origin)) {
+  if (permitido(req.headers.origin)) {
     res.setHeader("access-control-allow-origin", req.headers.origin);
     res.setHeader("vary", "origin");
     res.setHeader("access-control-allow-methods", "POST, OPTIONS");
@@ -36,7 +37,7 @@ export default async function handler(req, res) {
   const prod = PRODUCTOS[r.campania];
   if (!prod) return res.status(400).json({ error: "Producto no válido" });
 
-  const origen = ORIGENES.includes(req.headers.origin) ? req.headers.origin : ORIGENES[0];
+  const origen = permitido(req.headers.origin) ? req.headers.origin : "https://ia.aquotic.com";
   const todo = r.a_pagar_hoy >= r.total;
   const desc = `${CAMAROTE[r.camarote]} · ${MODO[r.modalidad]} · ${todo ? "pago total" : "depósito de reserva no reembolsable"}`;
   const p = new URLSearchParams({
