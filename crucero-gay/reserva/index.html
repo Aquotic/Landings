@@ -207,7 +207,9 @@ const CONFIG = {
   diasUltimoPago: 65,
   supabaseUrl: "https://eyuqdogsdwxnijswlads.supabase.co",
   supabaseKey: "sb_publishable_sFyMqE-qsR5Pkg2RJidBVA_C9vFtxWX",
-  claveLanding: "aq_seaview-gay-2027"
+  claveLanding: "aq_seaview-gay-2027",
+  // Las funciones de pago viven en el proyecto de las landings (el buscador solo reenvía /api/lead)
+  api: /crucerosaquotic|landings-ashen|localhost/.test(location.host) ? "" : "https://crucerosaquotic.vercel.app"
 };
 /* Solo para mostrar: el precio que se cobra lo calcula el servidor */
 const PRECIOS = { interior: { solo: 1972, amigo: 986, buscar: 986 }, balcon: { solo: 2752, amigo: 1376, buscar: 1376 } };
@@ -349,7 +351,7 @@ $("f").addEventListener("submit", async e => {
       viajeros, acepta: true, lead_id: lead && lead.id || null } }) });
     if (!r.ok) throw new Error("reserva " + r.status + " " + (await r.text()).slice(0, 120));
     const res = await r.json();
-    const s = await fetch("/api/reserva", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: res.id, token: res.token }) });
+    const s = await fetch(CONFIG.api + "/api/reserva", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: res.id, token: res.token }) });
     const j = await s.json().catch(() => ({}));
     if (!s.ok || !j.url) throw new Error(j.error || "pago " + s.status);
     location.href = j.url;

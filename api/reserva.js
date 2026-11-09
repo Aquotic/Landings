@@ -13,6 +13,14 @@ const MODO = { solo: "individual", amigo: "2 personas", buscar: "1 persona compa
 
 export default async function handler(req, res) {
   res.setHeader("cache-control", "no-store");
+  // La página puede estar servida desde el dominio del buscador: permitimos esa llamada (CORS)
+  if (ORIGENES.includes(req.headers.origin)) {
+    res.setHeader("access-control-allow-origin", req.headers.origin);
+    res.setHeader("vary", "origin");
+    res.setHeader("access-control-allow-methods", "POST, OPTIONS");
+    res.setHeader("access-control-allow-headers", "content-type");
+  }
+  if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Solo POST" });
   if (!process.env.STRIPE_SECRET_KEY) return res.status(503).json({ error: "Pagos no configurados" });
   let d = req.body;
