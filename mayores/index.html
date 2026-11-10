@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cruceros para mayores de 65 · Viaja acompañado | Aquotic</title>
+<meta name="description" content="Cruceros en grupo para mayores de 65: viaja acompañado, con todo incluido y sin preocuparte de nada. Barcelona, Islas griegas, Valencia y Canarias en 2027.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1d1a1c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Mismo sistema visual que la web de Aquotic, con letra más grande para leer sin gafas */
+:root{
+  --ink:#1d1a1c; --soft:#5d5659; --line:#e9e4e5; --tint:#f6f4f4; --sand:#fbeedd;
+  --brand:#f0394e; --brand-d:#d42a3e; --brand-soft:#fdebed; --wa:#1f7a55; --wa-bg:#e3f5d8;
+  --ring:0 1px 2px rgba(29,26,28,.06),0 6px 22px rgba(29,26,28,.08);
+  --f:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:var(--f);font-size:18.5px;line-height:1.55;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:8px}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.preview{background:#1d1a1c;color:#fff;font-size:13px;text-align:center;padding:5px 10px}
+
+/* Portada */
+.hero{position:relative;color:#fff;background:var(--ink)}
+.hero img{width:100%;height:clamp(340px,58vh,520px);object-fit:cover;object-position:center 40%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,26,28,.55) 0%,rgba(29,26,28,0) 28%,rgba(29,26,28,.15) 50%,rgba(29,26,28,.88) 100%)}
+.hero .top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding-top:14px}
+.logo{font-weight:800;font-size:24px;letter-spacing:-.03em;color:#fff;text-decoration:none}
+.tel{font-size:15px;font-weight:700;color:#fff;text-decoration:none;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:7px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+.hero .copy{position:absolute;left:0;right:0;bottom:24px;z-index:2}
+.kick{display:inline-block;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--brand);padding:4px 12px;border-radius:999px}
+h1{font-size:clamp(36px,9.5vw,54px);font-weight:800;letter-spacing:-.03em;line-height:1.03;margin-top:12px}
+.hero p{margin-top:10px;font-size:19px;color:#f3eeef;max-width:28ch}
+
+/* Botones */
+.ctas{display:grid;gap:10px;margin-top:20px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:19px;padding:17px 20px;border-radius:999px;text-decoration:none;transition:background .15s,transform .1s;min-height:56px}
+.btn:active{transform:scale(.985)}
+.btn svg{width:24px;height:24px;flex:0 0 24px}
+.btn.wa{background:var(--wa);color:#fff}
+.btn.main{background:var(--brand);color:#fff}
+.btn.main:hover{background:var(--brand-d)}
+.btn.soft{background:var(--tint);color:var(--ink)}
+.small{font-size:15px;color:var(--soft)}
+
+.trust{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:15px;color:var(--soft);padding-top:18px}
+.trust b{color:var(--ink)}
+.trust .st{color:#f5a524}
+.trust .ok::before{content:"✓ ";color:var(--wa);font-weight:800}
+
+section{padding-top:48px}
+.k{font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-d)}
+.h2{font-size:32px;font-weight:800;letter-spacing:-.025em;line-height:1.1;margin-top:6px}
+.sub{color:var(--soft);margin-top:8px}
+
+/* Salidas */
+.trips{display:grid;gap:18px;margin-top:20px}
+.trip{background:#fff;border-radius:20px;box-shadow:var(--ring);overflow:hidden;border:1px solid var(--line)}
+.trip .ph{position:relative}
+.trip .ph img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.trip .mes{position:absolute;left:14px;top:14px;background:#fff;color:var(--ink);font-weight:800;font-size:15px;padding:5px 12px;border-radius:999px}
+.trip .in{padding:18px}
+.trip h3{font-size:24px;font-weight:800;letter-spacing:-.02em;line-height:1.15}
+.trip .meta{color:var(--soft);font-size:16.5px;margin-top:4px}
+.ports{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.ports span{font-size:14.5px;background:var(--tint);padding:4px 10px;border-radius:999px}
+.why{margin-top:12px;font-size:16.5px;color:#3e383b}
+.price{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.price .d{font-size:14.5px;color:var(--soft)}
+.price b{display:block;font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--ink)}
+.price .i{font-size:14.5px;color:var(--soft);text-align:right}
+.tag{display:inline-block;font-size:13px;font-weight:700;background:var(--wa-bg);color:var(--wa);padding:3px 10px;border-radius:999px;margin-top:10px}
+details.itin{margin-top:14px;border:1px solid var(--line);border-radius:14px}
+details.itin summary{cursor:pointer;list-style:none;padding:13px 16px;font-weight:700;font-size:16.5px;display:flex;justify-content:space-between}
+details.itin summary::-webkit-details-marker{display:none}
+details.itin summary::after{content:"+";font-size:22px;line-height:1;color:var(--soft)}
+details.itin[open] summary::after{content:"–"}
+.days{padding:0 16px 12px}
+.days div{display:grid;grid-template-columns:92px 1fr auto;gap:8px;padding:8px 0;border-top:1px solid var(--line);font-size:15.5px}
+.days div b{font-weight:700}
+.days div span{color:var(--soft);text-align:right;white-space:nowrap}
+.days div.sea{color:var(--soft)}
+.days p{font-size:14px;color:var(--soft);margin-top:8px}
+.trip .acts{display:grid;grid-template-columns:1fr;gap:8px;margin-top:14px}
+
+/* Dudas */
+.faq{display:grid;gap:12px;margin-top:20px}
+.q{background:var(--sand);border-radius:18px;padding:18px 20px}
+.q h3{font-size:20px;font-weight:800;letter-spacing:-.01em}
+.q p{margin-top:6px;color:#3e383b;font-size:17px}
+
+/* Incluye */
+.inc{display:grid;grid-template-columns:1fr;gap:0;margin-top:16px}
+.inc li{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.inc li::before{content:"✓";flex:0 0 30px;height:30px;border-radius:50%;background:var(--wa-bg);color:var(--wa);display:grid;place-items:center;font-weight:800}
+.inc li b{display:block;font-size:17.5px}
+.inc li span{font-size:15.5px;color:var(--soft)}
+.note{background:var(--tint);border-radius:16px;padding:16px 18px;margin-top:16px;font-size:16.5px}
+
+/* Día a bordo */
+.dia{margin-top:16px;display:grid;gap:0}
+.dia div{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.dia b{font-weight:800;color:var(--brand-d)}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.gal img{width:100%;height:min(42vw,240px);object-fit:cover;border-radius:16px}
+
+/* Te llamamos */
+.call{margin-top:52px;background:var(--ink);color:#fff;border-radius:24px;padding:26px 20px}
+.call .h2{color:#fff}
+.call p.sub{color:#d8d1d3}
+.f{margin-top:14px}
+.f label{display:block;font-size:16px;font-weight:600;margin-bottom:6px}
+.f input,.f select{width:100%;font:inherit;font-size:19px;padding:15px 16px;border:0;border-radius:14px;background:#fff;color:var(--ink);-webkit-appearance:none;appearance:none}
+.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%235d5659' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center}
+.f.bad input{outline:3px solid #ff8a96}
+.err{color:#ffb3bb;font-size:15px;margin-top:4px}
+.err:empty{display:none}
+.chk{display:flex;gap:12px;align-items:flex-start;margin-top:16px;font-size:15px;color:#d8d1d3}
+.chk input{width:22px;height:22px;flex:0 0 22px;margin-top:1px;accent-color:var(--brand)}
+.chk.bad{color:#ffb3bb}
+.chk a{color:#fff}
+.ok-msg{display:none;text-align:center;padding:10px 0}
+.ok-msg .big{font-size:48px}
+.ok-msg h3{font-size:26px;font-weight:800;margin-top:6px}
+.ok-msg p{color:#d8d1d3;margin-top:8px}
+.call.done form{display:none}
+.call.done .ok-msg{display:block}
+
+footer{margin-top:48px;background:var(--tint);padding:24px 0 110px;font-size:15px;color:var(--soft)}
+footer .wrap{display:grid;gap:6px}
+.sticky{position:fixed;left:14px;right:14px;bottom:max(12px,env(safe-area-inset-bottom));z-index:20;display:grid;grid-template-columns:1fr 1fr;gap:8px;transition:opacity .2s,transform .2s}
+.sticky .btn{font-size:16.5px;padding:14px 10px;min-height:52px;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.sticky.hide{opacity:0;transform:translateY(20px);pointer-events:none}
+@media (min-width:900px){
+  .wrap{max-width:720px}
+  .ctas{grid-template-columns:1fr 1fr}
+  .trip .acts{grid-template-columns:1fr 1fr}
+  .sticky{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="preview" id="preview">Vista previa · los precios son de ejemplo</div>
+
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1718393241029-53dbb3e769a7?w=1400&q=70&auto=format&fit=crop" alt="Pareja de jubilados disfrutando en la cubierta de un barco" fetchpriority="high">
+  <div class="top wrap">
+    <a class="logo" href="/">Aquotic</a>
+    <a class="tel" href="#te-llamamos">Te llamamos gratis</a>
+  </div>
+  <div class="copy wrap">
+    <span class="kick">Mayores de 65</span>
+    <h1>Tu crucero, acompañado y sin preocuparte de nada</h1>
+    <p>Viajas en grupo, con coordinador y todo incluido. Tú solo disfruta.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="ctas" id="arriba">
+    <a class="btn wa js-wa" href="#" data-salida=""><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>Escríbenos por WhatsApp</a>
+    <a class="btn soft" href="#te-llamamos">Prefiero que me llaméis</a>
+  </div>
+  <div class="trust">
+    <span><span class="st" aria-hidden="true">★★★★★</span> <b>4,9</b> en Google · 1.937 opiniones</span>
+    <span class="ok">17 años organizando cruceros</span>
+    <span class="ok">Te atiende una persona</span>
+  </div>
+
+  <section id="salidas">
+    <p class="k">Las salidas de 2027</p>
+    <h2 class="h2">Elige tu crucero</h2>
+    <p class="sub">Cuatro viajes pensados para ti, con el grupo y el coordinador de Aquotic.</p>
+    <div class="trips" id="trips"></div>
+  </section>
+
+  <section>
+    <p class="k">Tus dudas</p>
+    <h2 class="h2">Lo que más nos preguntáis</h2>
+    <div class="faq">
+      <div class="q"><h3>¿Voy a ir solo?</h3><p>No. Viajas con un grupo de personas como tú y con un coordinador de Aquotic que te acompaña todo el viaje. Si vas por tu cuenta, te presentamos al grupo desde el primer día.</p></div>
+      <div class="q"><h3>¿Me esperan en el puerto?</h3><p>Sí. Te recogemos y te llevamos al barco, te ayudamos con el embarque y las maletas, y al volver te acompañamos hasta el traslado.</p></div>
+      <div class="q"><h3>¿Me acompañan a ver las ciudades?</h3><p>Sí. En cada puerto hay excursión con guía en español, a un ritmo tranquilo. Y si un día prefieres quedarte en el barco, también puedes.</p></div>
+      <div class="q"><h3>¿Me voy a marear?</h3><p>Es muy raro: son barcos enormes y muy estables. Aun así te recomendamos un camarote en el centro del barco, que es donde menos se mueve, y a bordo hay médico.</p></div>
+      <div class="q"><h3>¿Y si me pongo malo?</h3><p>Hay centro médico en el barco las 24 horas y el seguro de viaje está incluido. Lleva tus medicinas para todo el viaje y unos días más.</p></div>
+      <div class="q"><h3>¿Está todo incluido de verdad?</h3><p>Sí: comida, bebidas en las comidas, propinas, tasas, excursiones y espectáculos. Te damos un solo precio y por escrito, antes de reservar.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="k">Qué incluye</p>
+    <h2 class="h2">Un solo precio. Sin sorpresas.</h2>
+    <ul class="inc">
+      <li><div><b>Camarote con baño</b><span>Limpio y ordenado cada día</span></div></li>
+      <li><div><b>Pensión completa</b><span>Desayuno, comida, merienda y cena</span></div></li>
+      <li><div><b>Bebidas en las comidas</b><span>Agua, refrescos, vino y café</span></div></li>
+      <li><div><b>Propinas y tasas</b><span>Ya están dentro del precio</span></div></li>
+      <li><div><b>Excursiones con guía en español</b><span>En cada puerto, a ritmo tranquilo</span></div></li>
+      <li><div><b>Coordinador del grupo</b><span>Contigo todo el viaje</span></div></li>
+      <li><div><b>Traslados al barco</b><span>Y vuelos en las salidas de junio y diciembre</span></div></li>
+      <li><div><b>Seguro de viaje</b><span>Asistencia médica y cancelación</span></div></li>
+      <li><div><b>Espectáculos y baile</b><span>Todas las noches</span></div></li>
+    </ul>
+    <p class="note"><b>Sin llevar dinero encima.</b> A bordo todo se paga con la tarjeta del crucero, que también abre tu camarote. Al final ves la cuenta con calma.</p>
+  </section>
+
+  <section>
+    <p class="k">Así es un día a bordo</p>
+    <h2 class="h2">Tú eliges el ritmo</h2>
+    <div class="dia">
+      <div><b>8:00</b><span>Desayuno tranquilo con vistas al mar</span></div>
+      <div><b>9:30</b><span>Excursión con guía por la ciudad del día</span></div>
+      <div><b>13:30</b><span>Comida en el barco o en el pueblo</span></div>
+      <div><b>17:00</b><span>Siesta, piscina o una partida de cartas</span></div>
+      <div><b>20:00</b><span>Cena servida en mesa, con tu grupo</span></div>
+      <div><b>22:00</b><span>Espectáculo en el teatro y baile</span></div>
+    </div>
+    <div class="gal" aria-hidden="true">
+      <img src="/crucero-gay/img/seaside-lounge.jpg" alt="" loading="lazy">
+      <img src="/crucero-gay/img/camarote-balcon.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <section class="call" id="te-llamamos">
+    <p class="k" style="color:#ff9aa6">Te llamamos gratis</p>
+    <h2 class="h2">¿Prefieres hablar con una persona?</h2>
+    <p class="sub">Déjanos tu teléfono y dinos cuándo te viene mejor. Te llamamos sin compromiso.</p>
+    <form id="fcall" novalidate>
+      <div class="f" id="f-nombre"><label for="nombre">Tu nombre</label><input type="text" id="nombre" autocomplete="given-name" maxlength="80"><div class="err"></div></div>
+      <div class="f" id="f-tel"><label for="tel">Tu teléfono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="600 000 000" maxlength="20"><div class="err"></div></div>
+      <div class="f"><label for="salida">¿Qué crucero te interesa?</label><select id="salida"><option value="">Todavía no lo sé</option></select></div>
+      <div class="f"><label for="franja">¿Cuándo te llamamos?</label><select id="franja"><option value="mañana">Por la mañana (10 a 14 h)</option><option value="tarde">Por la tarde (16 a 20 h)</option><option value="cualquiera">Cuando podáis</option></select></div>
+      <label class="chk" id="c-ok"><input type="checkbox" id="ok"><span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y que Aquotic me llame para hablar de estos cruceros.</span></label>
+      <input type="text" id="empresa" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+      <button class="btn main" type="submit" style="margin-top:18px">Que me llamen</button>
+      <p class="small" style="color:#bdb5b8;margin-top:10px;text-align:center">Lunes a viernes de 10 a 20 h. Nada de compromiso.</p>
+    </form>
+    <div class="ok-msg" role="status">
+      <div class="big" aria-hidden="true">📞</div>
+      <h3>¡Apuntado, <span id="ok-nombre"></span>!</h3>
+      <p id="ok-texto">Te llamamos en cuanto podamos, en la franja que nos has dicho.</p>
+      <a class="btn wa js-wa" href="#" style="margin-top:18px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>Mientras, escríbenos por WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <span>© Aquotic · 17 años especialistas en cruceros · <a href="https://aquotic.com">aquotic.com</a></span>
+  <span>Itinerarios y horarios orientativos de MSC Cruceros, sujetos a cambios. Precios por persona en camarote doble salvo que se indique. <a href="/privacidad">Privacidad</a></span>
+</div></footer>
+
+<div class="sticky hide" id="sticky">
+  <a class="btn wa js-wa" href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4C2.7 15.6 2.2 13.8 2.2 12 2.2 6.6 6.6 2.2 12 2.2S21.8 6.6 21.8 12 17.4 21.8 12 21.8zM12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6c1.8 1 3.7 1.5 5.8 1.5 6.6 0 12-5.4 12-12S18.6 0 12 0z"/></svg>WhatsApp</a>
+  <a class="btn main" href="#te-llamamos">Que me llamen</a>
+</div>
+
+<script>
+/* =========================================================
+   CONFIGURACIÓN · los precios son de EJEMPLO: cambiar antes de publicar
+   ========================================================= */
+const CONFIG = {
+  campania: "mayores-65-2027",
+  whatsapp: "34711518584",      // WhatsApp central: la IA saluda y lo pasa a una persona
+  preciosDePrueba: true,        // quita la banda "Vista previa" cuando estén los precios buenos
+  supabaseUrl: "https://eyuqdogsdwxnijswlads.supabase.co",
+  supabaseKey: "sb_publishable_sFyMqE-qsR5Pkg2RJidBVA_C9vFtxWX"
+};
+
+const SALIDAS = [
+  { id: "abril", mes: "Abril 2027", titulo: "Minicrucero desde Barcelona", barco: "MSC Euribia", noches: 4, fechas: "del 10 al 14 de abril",
+    foto: "/crucero-gay/img/seaview-en-alta-mar.jpg", doble: 499, indiv: 799, extra: "Sin aviones · ideal para el primer crucero",
+    puertos: ["Barcelona", "Marsella", "Génova"], por: "El puerto viejo de Marsella y el casco antiguo de Génova, en solo 4 noches.",
+    dias: [["Sáb 10", "Barcelona · embarque", "Sale 18:00"], ["Dom 11", "Marsella (Francia)", "08:00–18:00"], ["Lun 12", "Génova (Italia)", "08:00–18:00"], ["Mar 13", "Navegación", "Día a bordo", 1], ["Mié 14", "Barcelona · llegada", "Llega 08:00"]] },
+  { id: "junio", mes: "Junio 2027", titulo: "Islas griegas y Turquía", barco: "MSC Divina", noches: 7, fechas: "del 18 al 25 de junio",
+    foto: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=1000&q=70&auto=format&fit=crop", doble: 1290, indiv: 2090, extra: "Vuelo a Roma incluido",
+    puertos: ["Roma", "Mykonos", "Marmaris", "Santorini", "Nápoles"], por: "Las casitas blancas de Santorini, una noche en Mykonos y Pompeya.",
+    dias: [["Vie 18", "Roma · embarque", "Sale 17:00"], ["Sáb 19", "Navegación", "Día a bordo", 1], ["Dom 20", "Mykonos (Grecia)", "13:00–23:00"], ["Lun 21", "Marmaris (Turquía)", "12:00–21:00"], ["Mar 22", "Santorini (Grecia)", "08:00–20:00"], ["Mié 23", "Navegación", "Día a bordo", 1], ["Jue 24", "Nápoles y Pompeya", "11:00–20:00"], ["Vie 25", "Roma · llegada", "Llega 07:00"]],
+    aviso: "Hace falta pasaporte por la escala en Turquía." },
+  { id: "septiembre", mes: "Septiembre 2027", titulo: "Mediterráneo desde Valencia", barco: "MSC Musica", noches: 7, fechas: "del 2 al 9 de septiembre",
+    foto: "/crucero-gay/img/piscina-panoramica.jpg", doble: 899, indiv: 1449, extra: "Sale y vuelve a Valencia, sin aviones",
+    puertos: ["Valencia", "Marsella", "Génova", "Roma", "Palermo", "Ibiza"], por: "Un día entero para conocer Roma, Palermo y una tarde en Ibiza.",
+    dias: [["Jue 2", "Valencia · embarque", "Sale 16:00"], ["Vie 3", "Marsella (Francia)", "13:00–19:00"], ["Sáb 4", "Génova (Italia)", "09:00–17:00"], ["Dom 5", "Civitavecchia (Roma)", "08:00–19:00"], ["Lun 6", "Palermo (Sicilia)", "11:00–20:00"], ["Mar 7", "Navegación", "Día a bordo", 1], ["Mié 8", "Ibiza", "12:30–23:00"], ["Jue 9", "Valencia · llegada", "Llega 07:00"]] },
+  { id: "diciembre", mes: "Diciembre 2027", titulo: "Islas Canarias y Madeira", barco: "MSC Euribia", noches: 7, fechas: "del 5 al 12 de diciembre",
+    foto: "https://images.unsplash.com/photo-1732471295848-230053f7416b?w=1000&q=70&auto=format&fit=crop", doble: 1190, indiv: 1890, extra: "Vuelo a Tenerife incluido",
+    puertos: ["Tenerife", "Fuerteventura", "Madeira", "Lanzarote", "Gran Canaria", "La Palma"], por: "Escapar del frío: en diciembre, unos 20 grados y seis islas en una semana.",
+    dias: [["Dom 5", "Tenerife · embarque", ""], ["Lun 6", "Fuerteventura", ""], ["Mar 7", "Funchal · Madeira", ""], ["Mié 8", "Navegación", "Día a bordo", 1], ["Jue 9", "Lanzarote", ""], ["Vie 10", "Las Palmas de Gran Canaria", ""], ["Sáb 11", "La Palma", ""], ["Dom 12", "Tenerife · llegada", ""]],
+    aviso: "Las horas de cada escala te las damos por escrito al reservar." }
+];
+
+const $ = id => document.getElementById(id);
+const eur = n => n.toLocaleString("es-ES", { useGrouping: "always" }) + " €";
+const esc = s => String(s || "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+if (!CONFIG.preciosDePrueba) $("preview").remove();
+
+/* El mensaje de WhatsApp lleva la etiqueta [Mayores 65] para que el equipo sepa de dónde viene y lo pase a una persona */
+function waHref(salida) {
+  const s = SALIDAS.find(x => x.id === salida);
+  const txt = `Hola 👋 Vengo de la web de cruceros para mayores de 65 [Mayores 65]. ${s ? `Me interesa el crucero de ${s.mes.toLowerCase()}: ${s.titulo}.` : "Quiero información de los cruceros."} ¿Me podéis atender?`;
+  return "https://wa.me/" + CONFIG.whatsapp + "?text=" + encodeURIComponent(txt);
+}
+const WA_ICON = document.querySelector(".js-wa svg").outerHTML;
+
+/* Tarjetas de las salidas */
+$("trips").innerHTML = SALIDAS.map(s => `
+  <article class="trip" id="salida-${s.id}">
+    <div class="ph"><img src="${s.foto}" alt="" loading="lazy"><span class="mes">${s.mes}</span></div>
+    <div class="in">
+      <h3>${s.titulo}</h3>
+      <p class="meta">${s.barco} · ${s.noches} noches · ${s.fechas}</p>
+      <span class="tag">${s.extra}</span>
+      <div class="ports">${s.puertos.map(p => `<span>${p}</span>`).join("")}</div>
+      <p class="why">${s.por}</p>
+      <div class="price"><div><span class="d">Desde, por persona</span><b>${eur(s.doble)}</b></div><div class="i">Viajando solo<br>${eur(s.indiv)}</div></div>
+      <details class="itin"><summary>Ver el itinerario día a día</summary><div class="days">
+        ${s.dias.map(d => `<div class="${d[3] ? "sea" : ""}"><b>${d[0]}</b><em style="font-style:normal">${d[1]}</em><span>${d[2]}</span></div>`).join("")}
+        ${s.aviso ? `<p>${s.aviso}</p>` : ""}
+      </div></details>
+      <div class="acts">
+        <a class="btn wa js-wa" href="${waHref(s.id)}" data-salida="${s.id}">${WA_ICON}Lo quiero</a>
+        <a class="btn soft" href="#te-llamamos" data-llamar="${s.id}">Que me llamen</a>
+      </div>
+    </div>
+  </article>`).join("");
+
+document.querySelectorAll(".js-wa").forEach(a => { if (!a.dataset.salida) a.href = waHref(""); a.target = "_blank"; a.rel = "noopener"; });
+$("salida").insertAdjacentHTML("beforeend", SALIDAS.map(s => `<option value="${s.id}">${s.mes} · ${s.titulo}</option>`).join(""));
+document.querySelectorAll("[data-llamar]").forEach(a => a.addEventListener("click", () => { $("salida").value = a.dataset.llamar; }));
+
+/* Te llamamos: se guarda en Supabase (leads) y pasa a Clientify como el resto de landings */
+const qs = new URLSearchParams(location.search);
+const H = { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey, "Content-Type": "application/json" };
+function normalizar(raw) {
+  let n = (raw || "").replace(/[^\d+]/g, "");
+  if (n.startsWith("+")) return n;
+  if (n.startsWith("00")) return "+" + n.slice(2);
+  n = n.replace(/\D/g, "");
+  return n.length === 9 ? "+34" + n : "+" + n;
+}
+function marcar(id, msg) { const b = $(id); b.classList.toggle("bad", !!msg); b.querySelector(".err").textContent = msg || ""; return !msg; }
+
+$("fcall").addEventListener("submit", async e => {
+  e.preventDefault();
+  if ($("empresa").value) return;
+  const nombre = $("nombre").value.trim(), tel = normalizar($("tel").value);
+  let ok = marcar("f-nombre", nombre.length >= 2 ? "" : "Escribe tu nombre.");
+  ok = marcar("f-tel", /^\+34[6789]\d{8}$/.test(tel) || /^\+\d{10,15}$/.test(tel) && !tel.startsWith("+34") ? "" : "Revisa el teléfono: 9 números.") && ok;
+  $("c-ok").classList.toggle("bad", !$("ok").checked);
+  if (!ok || !$("ok").checked) return;
+  const b = e.submitter || e.target.querySelector("button"); b.disabled = true; b.textContent = "Enviando…";
+  const salida = $("salida").value, franja = $("franja").value;
+  try {
+    const id = crypto.randomUUID(), token = crypto.randomUUID();
+    const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/leads", { method: "POST", headers: Object.assign({ Prefer: "return=minimal" }, H),
+      body: JSON.stringify({ id, edit_token: token, whatsapp: tel, campania: CONFIG.campania, consentimiento: true,
+        utm_source: qs.get("utm_source") || "web", utm_medium: qs.get("utm_medium"), utm_campaign: qs.get("utm_campaign"),
+        utm_content: `llamar · ${salida || "sin decidir"} · ${franja}` }) });
+    if (r.ok) {
+      await fetch(CONFIG.supabaseUrl + "/rest/v1/rpc/lead_completar", { method: "POST", headers: H, body: JSON.stringify({ p_id: id, p_token: token, p_nombre: nombre, p_paso: 4 }) }).catch(() => {});
+      fetch("/api/lead", { method: "POST", keepalive: true, headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id, token }) }).catch(() => {});
+    }
+  } catch (err) { console.warn(err); }
+  $("ok-nombre").textContent = nombre.split(" ")[0];
+  $("te-llamamos").classList.add("done");
+  $("te-llamamos").scrollIntoView({ behavior: "smooth", block: "center" });
+});
+
+/* Botones fijos en el móvil, ocultos mientras se ve la portada o el formulario */
+if ("IntersectionObserver" in window) {
+  const vistos = new Set();
+  const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? vistos.add(e.target) : vistos.delete(e.target)); $("sticky").classList.toggle("hide", vistos.size > 0); }, { threshold: .1 });
+  io.observe($("arriba")); io.observe($("te-llamamos"));
+}
+</script>
+</body>
+</html>

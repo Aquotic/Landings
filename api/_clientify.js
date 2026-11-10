@@ -11,6 +11,12 @@ export const CAMPANIAS = {
     origen: "landing-crucero-gay",
     fuente: "Landing crucero gay",
     etiqueta: "landing-seaview-gay-2027"
+  },
+  "mayores-65-2027": {
+    crucero: "Cruceros mayores de 65 · 2027 (Barcelona abril, Grecia junio, Valencia septiembre, Canarias diciembre)",
+    origen: "landing-mayores-65",
+    fuente: "Landing mayores de 65",
+    etiqueta: "landing-mayores-65"
   }
 };
 
@@ -69,7 +75,7 @@ export async function enviarLead(lead) {
   // 3) Campos aq_* (uno a uno; si ya existe, se actualiza)
   const acomp = ACOMPANANTE[lead.compania];
   const valores = {
-    aq_origen: camp.origen + (lead.utm_source ? " · " + lead.utm_source : "") + (lead.instagram ? " · @" + lead.instagram : ""),
+    aq_origen: camp.origen + (lead.utm_source ? " · " + lead.utm_source : "") + (lead.instagram ? " · @" + lead.instagram : "") + (lead.utm_content ? " · " + lead.utm_content : ""),
     aq_crucero: camp.crucero,
     aq_acompanante: acomp && acomp.texto,
     aq_ultima_accion: lead.paso >= 4 ? "landing-formulario-completo" : "landing-paso-" + lead.paso,
