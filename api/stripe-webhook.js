@@ -3,6 +3,7 @@
 import crypto from "node:crypto";
 import { rpc } from "./_supabase.js";
 import { marcarReserva } from "./_clientify.js";
+import { enviarEmail, emailReservaConfirmada } from "./_email.js";
 
 export const config = { api: { bodyParser: false } };
 
@@ -52,5 +53,13 @@ export default async function handler(req, res) {
     catch (e) { estado = "error: " + String(e && e.message || e).slice(0, 250); }
   }
   await rpc("reserva_marcar_clientify", { p_clave: clave.trim(), p_id: id, p_estado: estado }).catch(() => { });
+
+  // Email de confirmación al cliente (una sola vez aunque Stripe repita el aviso)
+  if (!r.email_enviado && process.env.RESEND_API_KEY) {
+    let error = null;
+    try { const e = emailReservaConfirmada(r); await enviarEmail({ para: r.email, asunto: e.asunto, html: e.html, texto: e.texto, copia: true }); }
+    catch (e) { error = String(e && e.message || e); console.error("email", error); }
+    await rpc("reserva_marcar_email", { p_clave: clave.trim(), p_id: id, p_error: error }).catch(() => { });
+  }
   return res.status(200).json({ ok: true });
 }
