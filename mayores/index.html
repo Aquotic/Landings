@@ -237,7 +237,7 @@ footer .wrap{display:grid;gap:6px}
       <div class="f" id="f-tel"><label for="tel">Tu teléfono</label><input type="tel" id="tel" autocomplete="tel" inputmode="tel" placeholder="600 000 000" maxlength="20"><div class="err"></div></div>
       <div class="f"><label for="salida">¿Qué crucero te interesa?</label><select id="salida"><option value="">Todavía no lo sé</option></select></div>
       <div class="f"><label for="franja">¿Cuándo te llamamos?</label><select id="franja"><option value="mañana">Por la mañana (10 a 14 h)</option><option value="tarde">Por la tarde (16 a 20 h)</option><option value="cualquiera">Cuando podáis</option></select></div>
-      <label class="chk" id="c-ok"><input type="checkbox" id="ok"><span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y que Aquotic me llame para hablar de estos cruceros.</span></label>
+      <label class="chk" id="c-ok"><input type="checkbox" id="ok"><span id="consent-txt">Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y que Aquotic me llame por teléfono (también con un asistente de voz automático) y me escriba por WhatsApp para hablar de estos cruceros.</span></label>
       <input type="text" id="empresa" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
       <button class="btn main" type="submit" style="margin-top:18px">Que me llamen</button>
       <p class="small" style="color:#bdb5b8;margin-top:10px;text-align:center">Lunes a viernes de 10 a 20 h. Nada de compromiso.</p>
@@ -358,7 +358,7 @@ $("fcall").addEventListener("submit", async e => {
   try {
     const id = crypto.randomUUID(), token = crypto.randomUUID();
     const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/leads", { method: "POST", headers: Object.assign({ Prefer: "return=minimal" }, H),
-      body: JSON.stringify({ id, edit_token: token, whatsapp: tel, campania: CONFIG.campania, consentimiento: true,
+      body: JSON.stringify({ id, edit_token: token, whatsapp: tel, campania: CONFIG.campania, consentimiento: true, consentimiento_texto: $("consent-txt").textContent.trim(),
         utm_source: qs.get("utm_source") || "web", utm_medium: qs.get("utm_medium"), utm_campaign: qs.get("utm_campaign"),
         utm_content: `llamar · ${salida || "sin decidir"} · ${franja}` }) });
     if (r.ok) {

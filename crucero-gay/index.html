@@ -236,7 +236,7 @@ footer a{color:#fff}
         </div>
         <label class="consent" id="f-ok">
           <input type="checkbox" id="ok">
-          <span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y recibir información de este crucero por WhatsApp y email.</span>
+          <span id="consent-txt">Acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a> y que Aquotic me envíe información de este crucero por WhatsApp y email, y me llame por teléfono (también con un asistente de voz automático).</span>
         </label>
         <div class="hp" aria-hidden="true"><input type="text" id="empresa" tabindex="-1" autocomplete="off"></div>
         <button class="btn main" type="submit">Quiero ver mis precios</button>
@@ -426,7 +426,7 @@ const origen = {
 const H = { apikey: CONFIG.supabaseKey, Authorization: "Bearer " + CONFIG.supabaseKey, "Content-Type": "application/json" };
 async function crearLead(whatsapp) {
   const id = crypto.randomUUID(), token = crypto.randomUUID();
-  const body = Object.assign({ id, edit_token: token, whatsapp, campania: CONFIG.campania, consentimiento: true }, origen);
+  const body = Object.assign({ id, edit_token: token, whatsapp, campania: CONFIG.campania, consentimiento: true, consentimiento_texto: $("consent-txt").textContent.trim() }, origen);
   const r = await fetch(CONFIG.supabaseUrl + "/rest/v1/leads", { method: "POST", headers: Object.assign({ Prefer: "return=minimal" }, H), body: JSON.stringify(body) });
   if (!r.ok) throw new Error("insert " + r.status);
   return { id, token };
