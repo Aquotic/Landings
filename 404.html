@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada | Aquotic</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#f0394e">
+<!-- Página de error de ia.aquotic.com para direcciones que no existen (las que no son del buscador ni de una landing).
+     La sirve Vercel con código 404. Si cambias el diseño, mantén el buscador: es lo que salva la visita. -->
+<style>
+:root{--bg:#fff;--sunk:#f6f4f4;--ink:#1d1a1c;--muted:#6f686b;--line:#e9e4e5;--brand:#f0394e;--wa:#1f8f4e}
+@media (prefers-color-scheme:dark){:root{--bg:#141214;--sunk:#242024;--ink:#f1eced;--muted:#a59da0;--line:#322c30;--brand:#ff5267}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:760px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:12px}
+.marca{font-weight:800;font-size:22px;letter-spacing:-.02em;text-decoration:none;color:var(--brand)}
+.marca small{font-size:10px;letter-spacing:.12em;background:var(--brand);color:#fff;border-radius:99px;padding:2px 6px;margin-left:6px;vertical-align:middle}
+.tel{text-decoration:none;color:var(--wa);font-weight:700}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.1;letter-spacing:-.02em;margin:40px 0 10px;text-wrap:balance}
+p{margin:0 0 14px;color:var(--muted)}
+form{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 30px}
+input{flex:1 1 260px;min-width:0;padding:14px 16px;border:1px solid var(--line);border-radius:14px;font:inherit;background:var(--bg);color:var(--ink)}
+button,.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#fff;border:0;border-radius:999px;padding:12px 20px;font:700 15px system-ui,sans-serif;text-decoration:none;cursor:pointer;touch-action:manipulation}
+.btn.wa{background:var(--wa)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:40px}
+.grid a{display:block;text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.grid b{display:block}.grid span{color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="marca" href="/">Aquotic<small>BETA</small></a><a class="tel" href="https://wa.me/34711518584">WhatsApp 711 518 584</a></div></header>
+<main class="w">
+  <h1>Esta página no existe</h1>
+  <p>Puede que el enlace esté mal o que esa oferta ya no esté disponible. Cuéntanos qué crucero buscas y te lo encontramos.</p>
+  <form action="/" method="get">
+    <label for="q" style="position:absolute;left:-9999px">Qué crucero buscas</label>
+    <input id="q" name="q" required autocomplete="off" placeholder="Ej.: Mediterráneo en agosto, 2 adultos, desde Barcelona…">
+    <button type="submit">Buscar con IA</button>
+  </form>
+  <div class="grid">
+    <a href="/cruceros"><b>Todos los cruceros</b><span>Destinos, barcos y puertos</span></a>
+    <a href="/guias/cruceros-desde-espana"><b>Cruceros desde España</b><span>Sin vuelos</span></a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc"><b>¿Cuánto cuesta un crucero?</b><span>Precios reales de MSC</span></a>
+    <a href="https://wa.me/34711518584?text=Hola%2C%20buscaba%20un%20crucero%20en%20vuestra%20web%20y%20no%20lo%20encuentro"><b>Pregúntanos por WhatsApp</b><span>711 518 584 · te respondemos al momento</span></a>
+    <a href="tel:+34910616100"><b>Llámanos</b><span>91 061 61 00 · L-V de 10:00 a 20:00</span></a>
+  </div>
+</main>
+</body>
+</html>
