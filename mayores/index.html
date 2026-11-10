@@ -29,7 +29,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* Portada */
 .hero{position:relative;color:#fff;background:var(--ink)}
-.hero img{width:100%;height:clamp(340px,58vh,520px);object-fit:cover;object-position:center 40%}
+.hero img{width:100%;height:clamp(360px,60vh,560px);object-fit:cover;object-position:center 35%}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(29,26,28,.55) 0%,rgba(29,26,28,0) 28%,rgba(29,26,28,.15) 50%,rgba(29,26,28,.88) 100%)}
 .hero .top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding-top:14px}
 .logo{font-weight:800;font-size:24px;letter-spacing:-.03em;color:#fff;text-decoration:none}
@@ -151,7 +151,7 @@ footer .wrap{display:grid;gap:6px}
 <div class="preview" id="preview">Vista previa · los precios son de ejemplo</div>
 
 <header class="hero">
-  <img src="https://images.unsplash.com/photo-1718393241029-53dbb3e769a7?w=1400&q=70&auto=format&fit=crop" alt="Pareja de jubilados disfrutando en la cubierta de un barco" fetchpriority="high">
+  <img src="https://images.unsplash.com/photo-1732471295848-230053f7416b?w=1400&q=70&auto=format&fit=crop" alt="Pareja de jubilados mirando el mar desde la cubierta de un barco" fetchpriority="high">
   <div class="top wrap">
     <a class="logo" href="/">Aquotic</a>
     <a class="tel" href="#te-llamamos">Te llamamos gratis</a>
@@ -288,7 +288,7 @@ const SALIDAS = [
     puertos: ["Valencia", "Marsella", "Génova", "Roma", "Palermo", "Ibiza"], por: "Un día entero para conocer Roma, Palermo y una tarde en Ibiza.",
     dias: [["Jue 2", "Valencia · embarque", "Sale 16:00"], ["Vie 3", "Marsella (Francia)", "13:00–19:00"], ["Sáb 4", "Génova (Italia)", "09:00–17:00"], ["Dom 5", "Civitavecchia (Roma)", "08:00–19:00"], ["Lun 6", "Palermo (Sicilia)", "11:00–20:00"], ["Mar 7", "Navegación", "Día a bordo", 1], ["Mié 8", "Ibiza", "12:30–23:00"], ["Jue 9", "Valencia · llegada", "Llega 07:00"]] },
   { id: "diciembre", mes: "Diciembre 2027", titulo: "Islas Canarias y Madeira", barco: "MSC Euribia", noches: 7, fechas: "del 5 al 12 de diciembre",
-    foto: "https://images.unsplash.com/photo-1732471295848-230053f7416b?w=1000&q=70&auto=format&fit=crop", doble: 1190, indiv: 1890, extra: "Vuelo a Tenerife incluido",
+    foto: "/crucero-gay/img/jungle-pool-lounge.jpg", doble: 1190, indiv: 1890, extra: "Vuelo a Tenerife incluido",
     puertos: ["Tenerife", "Fuerteventura", "Madeira", "Lanzarote", "Gran Canaria", "La Palma"], por: "Escapar del frío: en diciembre, unos 20 grados y seis islas en una semana.",
     dias: [["Dom 5", "Tenerife · embarque", ""], ["Lun 6", "Fuerteventura", ""], ["Mar 7", "Funchal · Madeira", ""], ["Mié 8", "Navegación", "Día a bordo", 1], ["Jue 9", "Lanzarote", ""], ["Vie 10", "Las Palmas de Gran Canaria", ""], ["Sáb 11", "La Palma", ""], ["Dom 12", "Tenerife · llegada", ""]],
     aviso: "Las horas de cada escala te las damos por escrito al reservar." }
