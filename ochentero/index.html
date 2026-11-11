@@ -79,6 +79,9 @@ tr.kids td{font-weight:500;color:var(--muted)}
 
 footer{font-size:12px;color:var(--muted)}
 footer .wrap{padding-block:18px 32px}
+/* Enlaces internos de ia.aquotic.com, en el pie de todas las landings */
+.aq-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(128,128,128,.3)}
+.aq-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -154,7 +157,16 @@ footer .wrap{padding-block:18px 32px}
   </div>
 </main>
 
-<footer><div class="wrap">Precios por persona en la cabina indicada. Niños en cualquier cabina, siempre con 2 adultos: consultar. © Aquotic</div></footer>
+<footer>
+  <nav class="aq-links wrap" aria-label="Más de Aquotic">
+    <a href="/">Buscador de cruceros con IA</a>
+    <a href="/cruceros">Todos los cruceros</a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc">¿Cuánto cuesta un crucero MSC?</a>
+    <a href="/guias/cruceros-desde-espana">Cruceros desde España</a>
+    <a href="/guias/mejor-epoca-para-hacer-un-crucero">Mejor época para un crucero</a>
+    <a href="/legal">Aviso legal y privacidad</a>
+  </nav>
+  <div class="wrap">Precios por persona en la cabina indicada. Niños en cualquier cabina, siempre con 2 adultos: consultar. © Aquotic</div></footer>
 
 <script>
 const tarifas = [

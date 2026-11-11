@@ -92,6 +92,9 @@ h1{font-size:30px;line-height:1.12;font-weight:800;letter-spacing:-.02em}
 footer{margin-top:28px;background:var(--tint);padding:20px 0 40px;font-size:13px;color:var(--soft)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
 @media (min-width:900px){ .wrap{max-width:560px} h1{font-size:38px} }
+/* Enlaces internos de ia.aquotic.com, en el pie de todas las landings */
+.aq-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(128,128,128,.3)}
+.aq-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -178,9 +181,18 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
   </div>
 </div>
 
-<footer><div class="wrap">
+<footer>
+  <nav class="aq-links wrap" aria-label="Más de Aquotic">
+    <a href="/">Buscador de cruceros con IA</a>
+    <a href="/cruceros">Todos los cruceros</a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc">¿Cuánto cuesta un crucero MSC?</a>
+    <a href="/guias/cruceros-desde-espana">Cruceros desde España</a>
+    <a href="/guias/mejor-epoca-para-hacer-un-crucero">Mejor época para un crucero</a>
+    <a href="/legal">Aviso legal y privacidad</a>
+  </nav>
+  <div class="wrap">
   <span>© Aquotic · <a href="https://aquotic.com">aquotic.com</a></span>
-  <span><a href="/crucero-gay">Ver el crucero</a> · <a href="/privacidad">Privacidad</a></span>
+  <span><a href="/crucero-gay">Ver el crucero</a></span>
 </div></footer>
 
 <script>

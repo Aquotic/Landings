@@ -145,6 +145,9 @@ footer .wrap{display:grid;gap:6px}
   .sticky{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+/* Enlaces internos de ia.aquotic.com, en el pie de todas las landings */
+.aq-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(128,128,128,.3)}
+.aq-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -179,6 +182,7 @@ footer .wrap{display:grid;gap:6px}
     <h2 class="h2">Elige tu crucero</h2>
     <p class="sub">Cuatro viajes pensados para ti, con el grupo y el coordinador de Aquotic.</p>
     <div class="trips" id="trips"></div>
+    <p class="sub" style="margin-top:18px">¿Buscas otra fecha u otro puerto cerca de casa? Mira los <a href="/guias/cruceros-desde-espana" style="color:var(--brand-d);font-weight:700">cruceros que salen desde España</a>.</p>
   </section>
 
   <section>
@@ -251,9 +255,18 @@ footer .wrap{display:grid;gap:6px}
   </section>
 </main>
 
-<footer><div class="wrap">
+<footer>
+  <nav class="aq-links wrap" aria-label="Más de Aquotic">
+    <a href="/">Buscador de cruceros con IA</a>
+    <a href="/cruceros">Todos los cruceros</a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc">¿Cuánto cuesta un crucero MSC?</a>
+    <a href="/guias/cruceros-desde-espana">Cruceros desde España</a>
+    <a href="/guias/mejor-epoca-para-hacer-un-crucero">Mejor época para un crucero</a>
+    <a href="/legal">Aviso legal y privacidad</a>
+  </nav>
+  <div class="wrap">
   <span>© Aquotic · 17 años especialistas en cruceros · <a href="https://aquotic.com">aquotic.com</a></span>
-  <span>Itinerarios y horarios orientativos de MSC Cruceros, sujetos a cambios. Precios por persona en camarote doble salvo que se indique. <a href="/privacidad">Privacidad</a></span>
+  <span>Itinerarios y horarios orientativos de MSC Cruceros, sujetos a cambios. Precios por persona en camarote doble salvo que se indique.</span>
 </div></footer>
 
 <div class="sticky hide" id="sticky">

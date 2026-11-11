@@ -188,6 +188,9 @@ footer a{color:#fff}
   .sticky{display:none}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Enlaces internos de ia.aquotic.com, en el pie de todas las landings */
+.aq-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(128,128,128,.3)}
+.aq-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -300,6 +303,7 @@ footer a{color:#fff}
       <figure><img src="/crucero-gay/img/piscina-noche.jpg" alt="Cubierta de piscina iluminada de noche" loading="lazy" width="1024" height="683"><figcaption><b>Las noches en cubierta</b><span>Bajo las estrellas, en pleno Mediterráneo</span></figcaption></figure>
     </div>
     <p class="swipe">Desliza para ver más →</p>
+    <p class="sub" style="margin-top:12px">Restaurantes, cubiertas y camarotes: <a href="/barcos/msc-seaview" style="color:var(--accent-d);font-weight:700">conoce el MSC Seaview a fondo</a>.</p>
   </section>
 
   <div class="price">
@@ -394,9 +398,18 @@ footer a{color:#fff}
   </div>
 </div>
 
-<footer><div class="wrap">
+<footer>
+  <nav class="aq-links wrap" aria-label="Más de Aquotic">
+    <a href="/">Buscador de cruceros con IA</a>
+    <a href="/cruceros">Todos los cruceros</a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc">¿Cuánto cuesta un crucero MSC?</a>
+    <a href="/guias/cruceros-desde-espana">Cruceros desde España</a>
+    <a href="/guias/mejor-epoca-para-hacer-un-crucero">Mejor época para un crucero</a>
+    <a href="/legal">Aviso legal y privacidad</a>
+  </nav>
+  <div class="wrap">
   <span>© Aquotic · <a href="https://aquotic.com">aquotic.com</a></span>
-  <span><a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">@pablodecrucero</a> · <a href="/privacidad">Privacidad</a></span>
+  <span><a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">@pablodecrucero</a></span>
 </div></footer>
 
 <a class="sticky hide" id="sticky" href="#form">Quiero ver mis precios</a>

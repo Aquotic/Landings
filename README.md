@@ -26,3 +26,18 @@ Cada paso del formulario se guarda en Supabase (tabla `leads`) y el servidor lo 
 - Si Clientify falla, el lead queda en Supabase con `clientify_estado = 'error'` y el motivo en `clientify_error`.
 - Para una campaña nueva, añádela en `CAMPANIAS` dentro de `api/_clientify.js`.
 - Para probar sin ensuciar: abre la landing con `?utm_source=prueba` y el contacto lleva la etiqueta `prueba-web`.
+
+## Pie de página común (obligatorio en todas las landings)
+
+Toda landing nueva lleva en el `<footer>` el bloque `nav.aq-links` con los enlaces internos de ia.aquotic.com
+(copiarlo tal cual de cualquier landing, junto con sus tres líneas de CSS `.aq-links`):
+
+- Buscador de cruceros con IA → `/`
+- Todos los cruceros → `/cruceros`
+- ¿Cuánto cuesta un crucero MSC? → `/guias/cuanto-cuesta-un-crucero-msc`
+- Cruceros desde España → `/guias/cruceros-desde-espana`
+- Mejor época para un crucero → `/guias/mejor-epoca-para-hacer-un-crucero`
+- Aviso legal y privacidad → `/legal`
+
+Además, cada landing enlaza en su contenido a la página del buscador que más le corresponda
+(crucero gay → `/barcos/msc-seaview`; mayores → `/guias/cruceros-desde-espana`).

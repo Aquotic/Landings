@@ -79,6 +79,9 @@ ol li::before{content:counter(s);flex:0 0 26px;height:26px;border-radius:50%;bac
 footer{padding:28px 0 40px;font-size:13px;color:var(--muted);text-align:center}
 @media (min-width:700px){.hero{min-height:480px}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+/* Enlaces internos de ia.aquotic.com, en el pie de todas las landings */
+.aq-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-bottom:14px;margin-bottom:14px;border-bottom:1px solid rgba(128,128,128,.3)}
+.aq-links a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 </style>
 </head>
 <body>
@@ -136,7 +139,16 @@ footer{padding:28px 0 40px;font-size:13px;color:var(--muted);text-align:center}
     <img src="/crucero-gay/img/camarote-balcon.jpg" alt="" loading="lazy" width="1024" height="683">
   </div>
 </main>
-<footer>© Aquotic · <a href="https://aquotic.com">aquotic.com</a> · <a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">@pablodecrucero</a> · <a href="/privacidad">Privacidad</a></footer>
+<footer>
+  <nav class="aq-links" style="justify-content:center" aria-label="Más de Aquotic">
+    <a href="/">Buscador de cruceros con IA</a>
+    <a href="/cruceros">Todos los cruceros</a>
+    <a href="/guias/cuanto-cuesta-un-crucero-msc">¿Cuánto cuesta un crucero MSC?</a>
+    <a href="/guias/cruceros-desde-espana">Cruceros desde España</a>
+    <a href="/guias/mejor-epoca-para-hacer-un-crucero">Mejor época para un crucero</a>
+    <a href="/legal">Aviso legal y privacidad</a>
+  </nav>
+  © Aquotic · <a href="https://aquotic.com">aquotic.com</a> · <a href="https://ig.me/m/pablodecrucero" target="_blank" rel="noopener">@pablodecrucero</a></footer>
 
 <script>
 const SB = "https://eyuqdogsdwxnijswlads.supabase.co", KEY = "sb_publishable_sFyMqE-qsR5Pkg2RJidBVA_C9vFtxWX";
